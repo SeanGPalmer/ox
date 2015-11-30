@@ -1,0 +1,120 @@
+/* ==========================================================================
+   Forms.
+   ========================================================================== */
+
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+textarea,
+.field {
+    display: block;
+    line-height: 1em;
+    padding: 0.25em 1em;
+    margin-bottom: $base-padding;
+    @include rem(font-size, 1);
+    color: $font-color;
+    border-radius: $base-radius;
+    vertical-align: middle;
+    box-shadow: none;
+    border: 0;
+    width: 100%;
+    max-width: 400px;
+    font-family: $font-body;
+    background-color: $grey-tint;
+    @include transition(background-color 0.2s ease-in-out);
+
+    &:focus,
+    &:active {
+        background-color: $grey-tint;
+        outline: none;
+    }
+
+    &.is-invalid,
+    &.error {
+        color: $alert-red;
+        border-color: $alert-red;
+        background-color: $white;
+        outline-color: $alert-red;
+    }
+
+    &.is-valid,
+    &.success {
+        color: $alert-green;
+        border-color: $alert-green;
+        background-color: $white;
+        outline-color: $alert-green;
+    }
+
+    &.is-disabled,
+    &[disabled] {
+        cursor: not-allowed;
+        opacity: 0.65;
+
+        &:focus,
+        &:active {
+            background-color: $alert-blue;
+        }
+    }
+}
+
+input[type="password"] {
+    letter-spacing: 0.3em;
+}
+
+[type="file"],
+[type="checkbox"],
+[type="radio"] {
+    margin: 0 0 $base-padding;
+
+    & + label {
+        @include inline-block;
+        margin: 0 $base-padding 0 $half-padding;
+        vertical-align: baseline;
+    }
+
+    label > & {
+        margin-right: $half-padding;
+    }
+}
+
+[type="file"] {
+    width: 100%;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+
+    legend {
+        margin-bottom: $half-padding;
+    }
+}
+
+
+textarea {
+    height: auto;
+    min-height: 50px;
+    resize: vertical;
+    border-radius: $base-radius;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    border-radius: $base-radius;
+}

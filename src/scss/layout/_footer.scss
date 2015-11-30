@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Footer.
+   ========================================================================== */
+
+.footer {
+	width: 100%;
+	padding: 3.5em 0;
+	background: $secondary;
+	color: $font-color;
+
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		color: inherit;
+		margin: 0 0 $base-padding;
+	}
+
+	a {
+		color: inherit;
+		@include rem(font-size, 1);
+	}
+
+	ul {
+		margin: 0 0 $base-padding;
+	}
+
+	li {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	p {
+		@include rem(font-size, 1);
+		margin: 0 0 $half-padding;
+	}
+
+	img {
+		margin-bottom: $base-padding;
+	}
+}

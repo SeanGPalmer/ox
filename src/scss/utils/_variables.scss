@@ -1,0 +1,81 @@
+/* ==========================================================================
+   Variables.
+   ========================================================================== */
+
+// Base measurements
+$base-font-size:    16px !default;
+$base-line-height:	28px !default;
+$base-radius:       5px;
+
+// Calculated measurements
+$line-height-ratio: ($base-line-height / $base-font-size) !default;
+$base-padding:      $line-height-ratio + em !default;
+$half-padding:      ($line-height-ratio / 2) + em !default;
+
+// Grid
+$grid-cols:         12 !default;
+$grid-gutter:       1.25em !default;
+
+// Row width
+$row-width:         1240px;
+
+// Breakpoints sizes
+$xlarge:            1650px;
+$large:             null; // Requires no breakpoint
+$medium:            $row-width;
+$small:             768px;
+$xsmall:            414px;
+
+// Breakpoints names
+$breakpoints: (
+    "papa-bear": $xlarge,
+    "mama-bear": $medium,
+    "baby-bear": $small,
+    "goldilocks": $xsmall
+);
+
+// Breakpoints column names
+$column-names: (
+    "xl"    "papa-bear"     $grid-cols,
+    "l"     null            $grid-cols,
+    "m"     "mama-bear"     $grid-cols,
+    "s"     "baby-bear"     $grid-cols,
+    "xs"    "goldilocks"    $grid-cols
+);
+
+// Monochrome colours
+$black:             #000000 !default;
+$white:             #ffffff !default;
+$grey-shade:        #4c4c4c !default;
+$grey:              #999999 !default;
+$grey-tint:         #f0f0f0 !default;
+
+// Base colours
+$primary:           #066eb7 !default;
+$accent:            #8e3329 !default;
+$secondary:         #ff5722 !default;
+
+$foreground:        #191919 !default;
+$background:        #e9e9e9 !default;
+
+// Tints and Shades
+$shade:             20%;
+$tint:              20%;
+$primary-shade: 	shade($primary, $shade);
+$primary-tint: 	    tint($primary, $tint);
+$accent-shade:      shade($accent, $shade);
+$accent-tint:       tint($accent, $tint);
+$secondary-shade:   shade($secondary, $shade);
+$secondary-tint:    tint($secondary, $tint);
+
+// Alerts
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+// Fonts
+$selection-color:   $primary-tint;
+$font-color:        #333;
+$font-body:         'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-header:       'Helvetica Neue', Helvetica, Arial, sans-serif;

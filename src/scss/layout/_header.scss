@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Header.
+   ========================================================================== */
+
+.header {
+	z-index: 5678;
+	display: block;
+	position: relative;
+	margin: 0;
+
+	&__container {
+		width: 100%;
+		background: $background;
+
+		.row {
+			height: 100%;
+		}
+	}
+}
+
+.logo {
+	h1 {
+		@include hide-text;
+	}
+}

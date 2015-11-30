@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Hero.
+   ========================================================================== */
+
+.hero {
+	position: relative;
+	height: pxtoem(400);
+
+	.row {
+		height: 100%;
+	}
+
+	&.viewport {
+		@include breakpoint(baby-bear) {
+			height: auto;
+			padding: 4em 0;
+		}
+	}
+}

@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Navigation.
+   ========================================================================== */
+
+// Primary Navigation
+.nav__primary {
+	height: 100%;
+    margin: 0;
+    font-size: 0;
+	position: relative;
+
+	@include breakpoint(baby-bear) {
+		display: none;
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	li {
+		list-style: none;
+		display: inline-block;
+	}
+
+	a {
+		position: relative;
+		@include inline-block;
+		@include rem(font-size, 1);
+	    height: 100%;
+	    padding: 0 2em;
+	    text-align: center;
+
+	    &:hover {
+	    	text-decoration: none;
+	    }
+
+	    &.active {
+
+	    }
+	}
+}
+
+// Primary Navigation - Dropdown
+.has-children {
+	> a {
+		&::after {
+			content: '';
+			font-family: 'icomoon';
+		}
+	}
+
+}
+
+.nav__dropdown {
+	li {
+
+	}
+
+	a {
+
+	}
+}
+
+// Hamburger Icon
+.nav__hamburger {
+
+}
+
+// Mobile Navigation
+.nav__mobile {
+
+}
+
+// Social Navigation
+.nav__social {
+	a {
+
+	}
+}
+
+// Footer Navigation
+.nav__footer {
+
+}

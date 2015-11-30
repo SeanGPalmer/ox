@@ -1,0 +1,139 @@
+/* ==========================================================================
+   Functions.
+   ========================================================================== */
+
+// *****************************************************************
+// Parse Int
+//
+// Removes any unit a value may have.
+// For use within mixins
+//
+// *****************************************************************
+
+@function parseInt($n) {
+	@return $n / ($n * 0 + 1);
+}
+
+// *****************************************************************
+// Force unit
+//
+// Forces the value's unit to the given one.
+// For use within mixins
+//
+// *****************************************************************
+
+@function force-unit($value, $unit) {
+	$value: parseInt($value);
+	@return if($value == 0, 0, $value + $unit);
+}
+
+// *****************************************************************
+// Map
+//
+// Applies the function to each argument in the given list.
+// For use within mixins
+//
+// *****************************************************************
+
+@function map($func, $list, $args...) {
+	$new-list: ();
+	@each $item in $list {
+		$new-list: append($new-list, call($func, $item, $args...));
+	}
+	@return $new-list;
+}
+
+// *****************************************************************
+// Multiply
+//
+// Multiplies x and y, if x is a number.
+// For use within mixins
+//
+// *****************************************************************
+
+@function multiply($x, $y) {
+	@if type-of($x) == 'number' {
+		@return $x * $y;
+	} @else {
+		@return $x;
+	}
+}
+
+// *****************************************************************
+// Tint
+//
+// Mixes in white with a color
+//
+// *****************************************************************
+
+@function tint($color, $percent){
+	@return mix(white, $color, $percent);
+}
+
+// *****************************************************************
+// Shade
+//
+// Mixes in shade with a color
+//
+// *****************************************************************
+
+@function shade($color, $percent){
+	@return mix(black, $color, $percent);
+}
+
+// *****************************************************************
+// Card shadow
+//
+// Computes a top-shadow and bottom-shadow for a card effect.
+// @param {Number} $depth - depth level (between 1 and 5)
+//
+// @link http://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality Google Design
+// *****************************************************************
+
+@function top-shadow($depth) {
+	$primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
+	$blur: nth(1.5 3 10 14 19, $depth) * 4px;
+	$color: rgba(black, nth(.12 .16 .19 .25 .30, $depth));
+
+	@return 0 $primary-offset $blur $color;
+}
+
+@function bottom-shadow($depth) {
+	$primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
+	$blur: nth(1 3 3 5 6, $depth) * 4px;
+	$color: rgba(black, nth(.24 .23 .23 .22 .22, $depth));
+
+	@return 0 $primary-offset $blur $color;
+}
+
+@mixin card($depth) {
+	@if $depth < 1 {
+		box-shadow: none;
+	} @else if $depth > 5 {
+		@warn "Invalid $depth `#{$depth}` for mixin `card`.";
+	} @else {
+		box-shadow: bottom-shadow($depth), top-shadow($depth);
+	}
+}
+
+// *****************************************************************
+// Smarter underline
+//
+// Computes a top-shadow and bottom-shadow for a card effect.
+// @param {Number} $depth - depth level (between 1 and 5)
+//
+// @link http://www.sumnoise.com/2014/03/30/underlining-links/
+// *****************************************************************
+
+@mixin underline($colour:$primary, $line-offset:1.2, $line-size:0.1) {
+	text-decoration: none;
+	@include background-image(linear-gradient(top, transparent 50%, $colour 50%));
+	background-repeat: repeat-x;
+	background-position: 0 #{$line-offset}em;
+	background-size: #{$line-size}em #{$line-size}em;
+
+	.lt-ie10 & { // because old IE can't handle it
+		background: none;
+		text-decoration: underline;
+	}
+}

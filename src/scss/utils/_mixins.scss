@@ -1,0 +1,331 @@
+/* ==========================================================================
+   Mixins.
+   ========================================================================== */
+
+// *****************************************************************
+// Media query mixin
+//
+// All styles without a media-query are assumed to be base styles within the .row width.
+//
+// Options are:
+//
+// papa-bear 	-	large monitor (larger than row width)
+// mama-bear	- 	tablet
+// baby-bear	- 	large mobile
+// goldilocks	- 	small mobile
+//
+// *****************************************************************
+@mixin breakpoint($bp) {
+	@if map-has-key($breakpoints, $bp) {
+		@media (max-width: map-get($breakpoints, $bp)) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+	@if $bp == chrome-fix {
+		@media (-webkit-min-device-pixel-ratio: 0) { @content; }
+	}
+}
+
+// *****************************************************************
+// Rem conversion mixin
+//
+// Based on: http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+//
+// Converts values to rems for any property passed to it.
+//
+// USAGE:
+//
+// .el {
+//    @include rem(padding, 10 0 5 1);
+//    @include rem(font-size, 2.5);
+// }
+//
+// OUTPUT (based on a 16px $base-font-size):
+//
+// .el {
+//    padding: 10rem 0 5rem 1rem;
+//    font-size: 40px;
+//    font-size: 2.5rem;
+// }
+//
+// *****************************************************************
+
+@mixin rem($property, $values) {
+	#{$property}: map(
+		force-unit,
+		map(multiply, $values, $base-font-size),
+		px
+	);
+	#{$property}: map(force-unit, $values, rem);
+}
+
+// *****************************************************************
+// Em conversion mixin
+//
+// Based on: https://css-tricks.com/snippets/sass/px-to-em-functions/
+//
+// Converts px value to ems.
+//
+// USAGE:
+//
+// h1 {
+//     font-size: pxtoem(32);
+// }
+//
+// OUTPUT (based on a 16px $base-font-size):
+//
+// h1 {
+//     font-size: 2em;
+// }
+//
+// *****************************************************************
+
+@function pxtoem($pixels, $context: parseInt($base-font-size)) {
+	@return #{$pixels/$context}em
+}
+
+// *****************************************************************
+// Clearfix
+//
+// via http://nicolasgallagher.com/micro-clearfix-hack/
+//
+// USAGE:
+//
+// .el {
+//    @include clearfix;
+// }
+//
+// *****************************************************************
+
+@mixin clearfix {
+	*zoom: 1;
+
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+	}
+
+	&:after { clear: both; }
+}
+
+// *****************************************************************
+// Image Replacement
+//
+// Requires inline-block or block for proper styling
+//
+// USAGE:
+//
+// .el {
+//    @include hide-text;
+// }
+//
+// *****************************************************************
+
+@mixin hide-text {
+	border: 0;
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+
+	:before {
+	    content: "";
+	    display: block;
+	    width: 0;
+	    height: 100%;
+	}
+}
+
+// *****************************************************************
+// Text Overflow
+//
+// USAGE:
+//
+// .el {
+//    @include text-overflow;
+// }
+//
+// *****************************************************************
+
+@mixin text-overflow {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+// *****************************************************************
+// Coverer
+//
+// USAGE:
+//
+// .el {
+//    @include coverer;
+// }
+//
+// *****************************************************************
+
+@mixin coverer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@mixin coverer-link {
+    @include coverer;
+	z-index: 9999;
+	background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7") 0 0 repeat; /*IE9 Hack */
+}
+
+// *****************************************************************
+// Inline block
+//
+// USAGE:
+//
+// .el {
+//    @include inline-block;
+// }
+//
+// *****************************************************************
+
+@mixin inline-block {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+
+// ***************************************************************************
+// Centerer
+//
+// USAGE:
+//
+// .child {
+//     @include centerer;
+// }
+//
+// ***************************************************************************
+
+@mixin centerer {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+// *****************************************************************
+// Font-face
+//
+// Bulletproof font-face via Font Squirrel
+//
+// USAGE:
+//
+// .el {
+//    @include fontface('family', 'fonts/fontfolder', 'myfontname');
+// }
+//
+// *****************************************************************
+
+@mixin fontface($font-family, $font-url, $font-name) {
+	@font-face {
+		font: {
+			family: $font-family;
+			style: normal;
+			weight: normal;
+			-webkit-font-smoothing: antialiased;
+		}
+		src: url($font-url + '/' + $font-name + '.eot');
+		src: url($font-url + '/' + $font-name + '.eot#iefix') format('embedded-opentype'),
+			 url($font-url + '/' + $font-name + '.woff') format('woff'),
+			 url($font-url + '/' + $font-name + '.ttf')  format('truetype'),
+			 url($font-url + '/' + $font-name + '.svg#' + $font-name) format('svg');
+	}
+}
+
+// ***************************************************************************
+// Retina images mixin
+//
+// via http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
+//
+// If dimensions are omitted, the mixin will try to guess them using
+// image-width and image-height helpers. This only works if compass can find
+// the image file locally, however.
+//
+// USAGE:
+//
+// .logo {
+//    background: image-url("logo.png") no-repeat;
+//    @include image-2x("logo@2x.png", 64px, 64px);
+// }
+//
+// OR
+//
+// .logo {
+//    background: image-url("logo.png") no-repeat;
+//    @include image-2x("logo@2x.png");
+// }
+//
+// ***************************************************************************
+
+@mixin image-2x($image, $width:"", $height:"") {
+	@media 	(min--moz-device-pixel-ratio: 1.3),
+			(-o-min-device-pixel-ratio: 2.6/2),
+			(-webkit-min-device-pixel-ratio: 1.3),
+			(min-device-pixel-ratio: 1.3),
+			(min-resolution: 1.3dppx) {
+		/* on retina, use image that's scaled by 2 */
+		background-image: url($image);
+
+		@if $width != "" {
+			// If the dimensions ARE passed in
+			@include background-size($width $height);
+		} @else {
+			// If the dimensions are NOT passed in, try to calculate them automatically
+			@include background-size(floor(image-width($image)/2) floor(image-height($image)/2));
+		}
+	}
+}
+
+// ***************************************************************************
+// Keyframes and animations
+//
+// USAGE:
+//
+// @include keyframes(slide-down) {
+//     0% { opacity: 1; }
+//     90% { opacity: 0; }
+// }
+//
+// .element {
+//     @include animation('slide-down 5s 3');
+// }
+//
+// ***************************************************************************
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};
+}

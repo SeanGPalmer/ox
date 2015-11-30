@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Alerts.
+   ========================================================================== */
+
+%alert {
+    margin: $base-padding;
+    padding: 0.5em 1em;
+    border: 1px solid;
+}
+
+.alert {
+    &--help {
+        @extend %alert;
+        border-color: shade($alert-yellow, 5%);
+        background: $alert-yellow;
+    }
+
+    &--info {
+        @extend %alert;
+        border-color: shade($alert-blue, 5%);
+        background: $alert-blue;
+    }
+
+    &--error  {
+        @extend %alert;
+        border-color: shade($alert-red, 5%);
+        background: $alert-red;
+    }
+
+    &--success  {
+        @extend %alert;
+        border-color: shade($alert-green, 5%);
+        background: $alert-green;
+    }
+}

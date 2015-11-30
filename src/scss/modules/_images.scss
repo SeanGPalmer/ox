@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Images.
+   ========================================================================== */
+
+img {
+    max-width: 100%;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+    @include inline-block;
+    vertical-align: middle;
+
+	&.aligncenter {
+		clear: both;
+		margin-bottom: $base-padding;
+	}
+
+	&.alignleft, &.alignright {
+		@include breakpoint(mama-bear) {
+			max-width: 100%;
+		}
+	}
+
+	&.alignleft { margin-right: 1.5em; }
+	&.alignright { margin-left: 1.5em; }
+
+	&.dropshadow {
+		@include card(1);
+	}
+
+	&.circle {
+		@include border-radius(50%);
+	}
+}

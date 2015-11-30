@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Cards.
+   ========================================================================== */
+
+.card__deck {
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: -#{$grid-gutter/2};
+    margin-left: -#{$grid-gutter/2};
+
+    > .col {
+        display: flex;
+    }
+}
+
+.card {
+    flex: 1 0 0;
+    position: relative;
+    margin-bottom: $grid-gutter;
+    background-color: $white;
+    @include transition(box-shadow 0.2s ease);
+
+    &:hover {
+        @include card(1);
+    }
+
+    &__link {
+        @include coverer-link;
+        @include hide-text;
+    }
+}

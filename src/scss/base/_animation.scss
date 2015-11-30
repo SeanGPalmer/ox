@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Animations.
+   ========================================================================== */
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+
+    &.infinite {
+        animation-iteration-count: infinite;
+    }
+}
+
+.fadeIn         { @include animation('fadeIn'); }
+.fadeInUp       { @include animation('fadeInUp'); }
+.fadeInDown     { @include animation('fadeInDown'); }
+.fadeInLeft     { @include animation('fadeInLeft'); }
+.fadeInRight    { @include animation('fadeInRight'); }
+.fadeOut        { @include animation('fadeIn'); }
+.fadeOutUp      { @include animation('fadeOutUp'); }
+.fadeOutDown    { @include animation('fadeOutDown'); }
+.fadeOutLeft    { @include animation('fadeOutLeft'); }
+.fadeOutRight   { @include animation('fadeOutRight'); }
+
+
+//Keyframes
+@include keyframes(fadeIn) {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@include keyframes(fadeInUp) {
+    0% {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@include keyframes(fadeInDown) {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@include keyframes(fadeInLeft) {
+    0% {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@include keyframes(fadeInRight) {
+    0% {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@include keyframes(fadeOut) {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@include keyframes(fadeOutUp) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@include keyframes(fadeOutDown) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+@include keyframes(fadeOutLeft) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@include keyframes(fadeOutRight) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+}

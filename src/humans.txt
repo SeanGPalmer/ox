@@ -1,0 +1,19 @@
+/* Ox is a responsive HTML5 Framework using SCSS, Gulp and Bower. */
+
+/* COMPANY */
+
+Major Digital
+http://majordigital.com
+Twitter: @_majordigital
+
+/* TEAM */
+
+Davs Howard - Head of Digital
+Twitter: @djhsecondnature
+
+
+/* SITE */
+
+Framework: Ox Framework
+Standards: HTML5, CSS3, SCSS
+Components: Modernizr, jQuery, Fitvids, Normalize.css

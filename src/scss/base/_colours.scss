@@ -1,0 +1,14 @@
+/* ==========================================================================
+   Colours.
+   ========================================================================== */
+
+$colours:
+    "primary" $primary,
+    "accent" $accent,
+    "secondary" $secondary;
+
+@each $i in $colours {
+    .#{nth($i, 1)} {
+        background-color: nth($i, 2);
+    }
+}
