@@ -41,15 +41,15 @@ function mobilecheck() {
 function breakpointCheck() {
 	var $r = $(".responsiveChecker");
 
-	if ($r.css("font-weight") == "500" ) {
+	if ($r.css("font-weight") === "500" ) {
 		return 4;
-    } else if ($r.css("font-weight") == "400" ) {
+    } else if ($r.css("font-weight") === "400" ) {
 		return 3;
-    } else if ($r.css("font-weight") == "300" ) {
+    } else if ($r.css("font-weight") === "300" ) {
 		return 2;
-    } else if ($r.css("font-weight") == "200" ) {
+    } else if ($r.css("font-weight") === "200" ) {
 		return 1;
-    } else if ($r.css("font-weight") == "100" ) {
+    } else if ($r.css("font-weight") === "100" ) {
 		return 0;
     }
 }

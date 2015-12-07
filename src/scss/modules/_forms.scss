@@ -112,6 +112,11 @@ textarea {
 }
 
 select {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20w…9-11.263s-1.956-8.325-4.89-11.263z%27%20fill%3D%27%23000%27/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1rem) center;
+    background-size: 0.6875em;
+    padding-right: 2.5rem
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;

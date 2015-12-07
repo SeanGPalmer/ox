@@ -47,27 +47,28 @@ var gulp        = require('gulp')
   , sass        = require('gulp-ruby-sass');
 ;
 
-var browserSync = require('browser-sync');
+var browserSync = require('browser-sync').create();
 var reload      = browserSync.reload;
 
 // ==== BROWSER-SYNC ==== //
 
-gulp.task('browser-sync', function() {
-    //watch files
-    var files = [
-        './**/*.css',
-        './**/*.php',
-        './**/*.html'
-    ];
-
+gulp.task('serve', function(gulpCallback) {
     // Initialize browser-sync
-    browserSync.init(files, {
-        //browser-sync with a php server
+    browserSync.init({
         proxy: project+'.dev',
         notify: false
+    }, function callback() {
+        gulp.watch(build+'**/*(*.html|*.php|*.txt)', browserSync.reload);
+        gulp.watch(build+'js/**/*.js', browserSync.reload);
+
+        gulp.watch(build+'**/*.css', function() {
+            gulp.src(build+'**/*.css')
+            .pipe(browserSync.stream());
+        });
+
+        gulpCallback();
     });
 });
-
 
 
 // ==== STYLES ==== //
@@ -87,7 +88,7 @@ gulp.task('styles', function() {
     .pipe(plugins.rename({suffix: '.min'}))
     .pipe(plugins.minifyCss({ keepSpecialComments: 1 }))
     .pipe(gulp.dest(build+'styles/'))
-    .pipe(reload({stream:true}));
+    .pipe(browserSync.stream());
 });
 
 
@@ -104,7 +105,7 @@ gulp.task('scripts', ['scripts-lint', 'scripts-core', 'scripts-vendor', 'scripts
     .pipe(plugins.rename({suffix: '.min'}))
     .pipe(plugins.uglify())
     .pipe(gulp.dest(build+'js/'))
-    .pipe(reload({stream:true}));
+    .pipe(browserSync.stream());
 });
 
 // Lint scripts for errors and sub-optimal formatting
@@ -168,7 +169,7 @@ gulp.task('images', function() {
         interlaced: true
     }))
     .pipe(gulp.dest(build))
-    .pipe(reload({stream:true}));
+    .pipe(browserSync.stream());
 });
 
 
@@ -180,7 +181,7 @@ gulp.task('favicon', function() {
     return gulp.src(source+'**/*(*.ico|*.xml|*.json)')
     .pipe(plugins.plumber())
     .pipe(gulp.dest(build))
-    .pipe(reload({stream:true}));
+    .pipe(browserSync.stream());
 });
 
 
@@ -203,7 +204,7 @@ gulp.task('html', function() {
     return gulp.src(source+'**/*(*.html|*.php|*.txt)')
     .pipe(plugins.plumber())
     .pipe(gulp.dest(build))
-    .pipe(reload({stream:true}));
+    .pipe(browserSync.stream());
 });
 
 
@@ -215,7 +216,7 @@ gulp.task('fonts', function() {
     return gulp.src(source+'**/*(*.eot|*.svg|*.ttf|*.woff)')
     .pipe(plugins.plumber())
     .pipe(gulp.dest(build))
-    .pipe(reload({stream:true}));
+    .pipe(browserSync.stream());
 });
 
 
@@ -244,7 +245,7 @@ gulp.task('dist-wipe', ['build'], function(cb) {
 });
 
 // Copy everything in the build folder (except previously minified stylesheets) to the `dist/project` folder
-gulp.task('dist-copy', ['dist-wipe'], function() {
+gulp.task('dist-copy', ['build'], function() {
     return gulp.src([
         build+'**/*',
         '!'+build+'**/*.min.css'
@@ -300,10 +301,12 @@ gulp.task('bower-fitvids', function() {
 
 
 
+
+
 // ==== WATCH ==== //
 
 // Watch task: build stuff when files are modified, livereload when anything in the `build` or `dist` folders change
-gulp.task('watch', ['browser-sync'], function() {
+gulp.task('watch', ['serve'], function() {
     gulp.watch(source+'scss/**/*.scss', ['styles']);
     gulp.watch(source+'js/**/*.js', ['scripts']);
     gulp.watch(source+'**/*(*.png|*.jpg|*.jpeg|*.gif)', ['images']);

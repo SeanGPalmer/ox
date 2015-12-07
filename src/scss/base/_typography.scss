@@ -42,48 +42,24 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-	@include rem(font-size, 2.5);
+	@include rem(font-size, 2.25);
 	line-height: 1;
-
-	@include breakpoint(mama-bear) {
-		@include rem(font-size, 2.25);
-	}
-
-	@include breakpoint(baby-bear) {
-		@include rem(font-size, 2);
-	}
 }
 
 h2, .h2 {
-	@include rem(font-size, 2);
+	@include rem(font-size, 1.875);
 	line-height: 1.2;
-
-	@include breakpoint(mama-bear) {
-		@include rem(font-size, 1.875);
-	}
-
-	@include breakpoint(baby-bear) {
-		@include rem(font-size, 1.5);
-	}
 }
 
 h3, .h3 {
 	@include rem(font-size, 1.5);
 	line-height: 1.4;
-
-	@include breakpoint(mama-bear) {
-		@include rem(font-size, 1.25);
-	}
 }
 
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-	@include rem(font-size, 1.25);
-
-	@include breakpoint(mama-bear) {
-		@include rem(font-size, 1);
-	}
+	@include rem(font-size, 1.125);
 }
 
 // Standard typography
