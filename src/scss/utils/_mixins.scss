@@ -23,6 +23,7 @@
 	} @else {
 		@content;
 	}
+
 	@if $bp == chrome-fix {
 		@media (-webkit-min-device-pixel-ratio: 0) { @content; }
 	}
