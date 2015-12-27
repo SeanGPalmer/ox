@@ -177,7 +177,7 @@
 
 @mixin coverer-link {
     @include coverer;
-	z-index: 9999;
+	z-index: 7777;
 	background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7") 0 0 repeat; /*IE9 Hack */
 }
 

@@ -1,5 +1,14 @@
 # Ox Changelog
 
+### 0.1.2 (27 December, 2015)
+
+_SCSS_
+* Amended coverer-link to a lower z-index
+
+_JQUERY_
+* Bundled fitvids.js
+
+
 ### 0.1.1 (7 December, 2015)
 
 _NPM_
