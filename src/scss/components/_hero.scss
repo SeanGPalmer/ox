@@ -1,9 +1,19 @@
 // ==========================================================================
-//   Sidebar.
+//   Hero.
 // ==========================================================================
 
-.aside {
+.hero {
 	position: relative;
-	display: block;
-	z-index: 4567;
+	height: 25em;
+
+	.row {
+		height: 100%;
+	}
+
+	&.viewport {
+		@include breakpoint(baby-bear) {
+			height: auto;
+			padding: 4em 0;
+		}
+	}
 }

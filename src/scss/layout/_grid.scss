@@ -1,11 +1,15 @@
-/* ==========================================================================
-   Grid.
-   ========================================================================== */
+// ==========================================================================
+//   Grid.
+// ==========================================================================
 
 .row {
 	width: $row-width;
 	margin: 0 auto;
 	padding: 0 $grid-gutter/2;
+
+    @include breakpoint(mama-bear) {
+        width: 100%;
+    }
 
 	&::after {
 		content: "";
@@ -13,17 +17,13 @@
 		clear: both;
 	}
 
-	&.full-width {
+	&.fullwidth {
 		width: 100%;
         padding: 0;
 	}
 
 	.row {
 		width: auto;
-	}
-
-	@include breakpoint(mama-bear) {
-		width: 100%;
 	}
 }
 
@@ -34,9 +34,10 @@
 	min-height: 1px;
 }
 
+// Responsive grid
 @each $column in $column-names {
 
-    // Responsive columns
+    // Grid columns
     $j: 1;
     @while $j <= $grid-cols {
         $percentage: unquote((100 / ($grid-cols / $j)) + "%");
@@ -49,6 +50,7 @@
         $j: $j + 1;
     }
 
+    // Grid offset
     $k: 0;
     @while $k <= ($grid-cols - 1) {
         $percentage: unquote((100 / ($grid-cols / $k)) + "%");
@@ -60,6 +62,7 @@
         $k: $k + 1;
     }
 
+    // Some standard variants
     $column-standards: (
         "half": 50%,
         "third": 33.3333%,
@@ -76,7 +79,7 @@
         }
     }
 
-    // Responsive padding
+    // Grid padding
     .#{nth($column, 1)}-delta {
         @include breakpoint(nth($column, 2)) {
             padding-right: $grid-gutter / 2;
@@ -96,7 +99,7 @@
         }
     }
 
-    // Responsive visilibilty
+    // Grid visilibilty
     .#{nth($column, 1)}-hide {
         @include breakpoint(nth($column, 2)) {
             display: none !important;

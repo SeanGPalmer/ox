@@ -143,6 +143,29 @@ function carouselInit() {
 }
 
 /*---------------------------------
+	Navigation - primary
+
+	Initilising menu and hamburger icon
+-----------------------------------*/
+function mobileMenuClick() {
+	$('.nav__hamburger').on('click touchstart', function(event) {
+		event.preventDefault();
+
+		$('body').toggleClass('open-nav');
+	});
+}
+
+function mobileMenuDetach() {
+	var navprimary = $('.nav__primary').detach();
+
+	if (breakpointCheck() < 2) {
+		navprimary.appendTo('.nav__mobile');
+	} else {
+		navprimary.appendTo('.nav__bar .row');
+	}
+}
+
+/*---------------------------------
 	Breaker Parallax
 
 	Creates parallax effect on defined element but scroll speed determined by height of the background image within.
@@ -177,10 +200,11 @@ jQuery(document).ready(function($){
 
 	// ==== EXECUTE ==== //
 	smoothScroll();
-	responsiveVideos();
-	animationInit();
-	carouselInit();
-	breakerParallax();
+	//responsiveVideos();
+	//animationInit();
+	//carouselInit();
+	//breakerParallax();
+	mobileMenuClick();
 
 	// ==== SCROLL EVENTS ==== //
 	$(window).on("scroll", function() {

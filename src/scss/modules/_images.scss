@@ -1,12 +1,12 @@
-/* ==========================================================================
-   Images.
-   ========================================================================== */
+// ==========================================================================
+//   Images.
+// ==========================================================================
 
 img {
     max-width: 100%;
     height: auto;
     -ms-interpolation-mode: bicubic;
-    @include inline-block;
+    display: inline-block;
     vertical-align: middle;
 
 	&.aligncenter {
@@ -24,10 +24,27 @@ img {
 	&.alignright { margin-left: 1.5em; }
 
 	&.dropshadow {
-		@include card(1);
+        &::after {
+            content: '';
+            @include coverer;
+            @include card(1);
+        }
 	}
 
 	&.circle {
-		@include border-radius(50%);
+        border-radius: 50%;
 	}
+}
+
+.figure {
+    display: inline-block;
+
+    img {
+        margin-bottom: $base-padding;
+        line-height: 1;
+    }
+
+    caption {
+        @include rem(font-size, 0.875);
+    }
 }

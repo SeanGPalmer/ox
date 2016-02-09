@@ -282,7 +282,7 @@ gulp.task('dist-images', ['dist-styles'], function() {
 // Executed on `bower update` which is in turn triggered by `npm update`; use this to manually copy front-end dependencies into your working source folder
 gulp.task('bower', [
     'bower-fitvids',
-    'bower-normalize'
+    //'bower-normalize'
 ]);
 
 // Used to get around Sass's inability to properly @import vanilla CSS

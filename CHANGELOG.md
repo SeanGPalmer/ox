@@ -1,5 +1,33 @@
 # Ox Changelog
 
+### 0.1.3 (9 February, 2016)
+
+_BOWER_
+* Disabled normalize.css on default
+
+_HTML_
+* Added logo, hamburger, generic navigation and mobile navigation
+
+_SCSS_
+* Changed header comment style on all partials, so they're removed in minification
+* Added reboot partial and refactored elements into it
+* Moved breaker and hero into components
+* Added width fix for .card__deck
+* Added optimised dropshadow for .card
+* Refactored navigation
+* Added default styles for text in alerts
+* Removed inline-block mixin
+* Removed compass reliance for transition
+* Added forms to label
+* Added figure to images
+* Reorganised helpers
+*
+
+_JQUERY_
+* Added hamburger click function
+* Added mobile detach function
+* Disable functions by default
+
 ### 0.1.2 (27 December, 2015)
 
 _SCSS_

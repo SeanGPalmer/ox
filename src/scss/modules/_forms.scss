@@ -1,6 +1,11 @@
-/* ==========================================================================
-   Forms.
-   ========================================================================== */
+// ==========================================================================
+//   Forms.
+// ==========================================================================
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5em;
+}
 
 input[type="text"],
 input[type="password"],
@@ -94,6 +99,7 @@ input[type="password"] {
 }
 
 fieldset {
+    min-width: 0;
     border: 0;
     margin: 0;
     padding: 0;
@@ -107,7 +113,6 @@ fieldset {
 textarea {
     height: auto;
     min-height: 50px;
-    resize: vertical;
     border-radius: $base-radius;
 }
 

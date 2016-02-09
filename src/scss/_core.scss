@@ -1,6 +1,6 @@
-/* ==========================================================================
-   Partials.
-   ========================================================================== */
+// ==========================================================================
+//   Partials.
+// ==========================================================================
 
 // ==== COMPASS ==== //
 @import "compass";
@@ -11,21 +11,20 @@
 @import "utils/functions";
 @import "utils/mixins";
 @import "utils/normalize";
+@import "utils/reboot";
 @import "utils/helpers";
 
 // ==== BASE ==== //
 @import "base/general";
 @import "base/colours";
-@import "base/animation";
+//@import "base/animation";
 @import "base/typography";
 
 // ==== LAYOUT ==== //
 @import "layout/grid";
 @import "layout/header";
 @import "layout/footer";
-@import "layout/hero";
 @import "layout/sections";
-@import "layout/breakers";
 @import "layout/sidebar";
 
 // ==== MODULES ==== //
@@ -38,8 +37,10 @@
 // ==== COMPONENTS ==== //
 @import "components/accordion";
 @import "components/breadcrumb";
+@import "components/breakers";
 @import "components/card";
 @import "components/carousel";
+@import "components/hero";
 @import "components/languages";
 @import "components/navigation";
 @import "components/pagination";

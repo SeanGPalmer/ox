@@ -1,8 +1,9 @@
-/* ==========================================================================
-   Cards.
-   ========================================================================== */
+// ==========================================================================
+//   Cards.
+// ==========================================================================
 
 .card__deck {
+    width: calc(100% + #{$grid-gutter*2});
     display: flex;
     flex-flow: row wrap;
     margin-right: -#{$grid-gutter/2};
@@ -20,8 +21,19 @@
     background-color: $white;
     @include transition(box-shadow 0.2s ease);
 
+    // Optimised to avoid DOM repaints
+    &::after {
+        content: '';
+        @include coverer;
+        opacity: 0;
+        @include card(2);
+        transition: opacity 0.2s ease;
+    }
+
     &:hover {
-        @include card(1);
+        &::after {
+            opacity: 1;
+        }
     }
 
     &__link {

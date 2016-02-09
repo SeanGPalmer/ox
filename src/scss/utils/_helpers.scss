@@ -1,6 +1,23 @@
-/* ==========================================================================
-   Helpers.
-   ========================================================================== */
+// ==========================================================================
+//   Helpers.
+// ==========================================================================
+
+// Clearfix: contain floats
+.cf {
+    @include clearfix;
+}
+
+// Helpers for box alignment
+.float--right { float: right !important; }
+.float--left { float: left !important; }
+
+// Helpers for text alignment and parameters
+.text--left { text-align: left !important; }
+.text--center { text-align: center !important; }
+.text--right { text-align: right !important; }
+.text--upper { text-transform: uppercase !important; }
+.text--strong { font-weight: bold !important; }
+.text--nowrap { white-space: nowrap !important; }
 
 // Chrome frame prompt
 .chromeframe {
@@ -8,17 +25,6 @@
     background: #ccc;
     color: #000;
     padding: 0.5em 0;
-}
-
-// Image Replacement
-.ir {
-   @include hide-text;
-}
-
-
-// Clearfix: contain floats
-.cf {
-    @include clearfix;
 }
 
 // Hide from both screenreaders and browsers
@@ -55,23 +61,4 @@
 // Hide visually and from screenreaders, but maintain layout
 .invisible {
     visibility: hidden;
-}
-
-// Helpers for box alignment
-.float--right { float: right !important; }
-.float--left { float: left !important; }
-
-// Helpers for text alignment and parameters
-.text--left { text-align: left !important; }
-.text--center { text-align: center !important; }
-.text--right { text-align: right !important; }
-.text--upper { text-transform: uppercase !important; }
-.text--strong { font-weight: bold !important; }
-.text--nowrap { white-space: nowrap !important; }
-
-// Card shadows
-@for $i from 2 through 6 {
-    .card__shadow--#{$i} {
-        @include card($i - 1);
-    }
 }

@@ -1,16 +1,16 @@
-/* ==========================================================================
-   Buttons.
-   ========================================================================== */
+// ==========================================================================
+//   Buttons.
+// ==========================================================================
 
 %btn {
 	-webkit-appearance: none;
 	-moz-appearance: none;
-  	@include inline-block;
+  	display: inline-block;
   	position: relative;
   	font-family: $font-header;
   	@include rem(font-size, 1);
-	line-height: 1.5;
 	font-weight: 500;
+	line-height: 1.5;
 	text-align: center;
 	margin: 0;
 	padding: 0.5em 1em;
@@ -19,10 +19,10 @@
 	border: 0;
 	cursor: pointer;
 	border-radius: $base-radius;
-	@include transition(background-color 0.2s ease-in-out);
+	transition: background-color 0.2s ease-in-out;
 
 	@include breakpoint(goldilocks) {
-		width:100%;
+		width: 100%;
 	}
 
 	&,
