@@ -9,31 +9,31 @@ img {
     display: inline-block;
     vertical-align: middle;
 
-	&.aligncenter {
-		clear: both;
-		margin-bottom: $base-padding;
-	}
+    &.aligncenter {
+        clear: both;
+        margin-bottom: $base-padding;
+    }
 
-	&.alignleft, &.alignright {
-		@include breakpoint(mama-bear) {
-			max-width: 100%;
-		}
-	}
+    &.alignleft, &.alignright {
+        @include breakpoint(mama-bear) {
+            max-width: 100%;
+        }
+    }
 
-	&.alignleft { margin-right: 1.5em; }
-	&.alignright { margin-left: 1.5em; }
+    &.alignleft { margin-right: 1.5em; }
+    &.alignright { margin-left: 1.5em; }
 
-	&.dropshadow {
+    &.dropshadow {
         &::after {
-            content: '';
+            content: "";
             @include coverer;
             @include card(1);
         }
-	}
+    }
 
-	&.circle {
+    &.circle {
         border-radius: 50%;
-	}
+    }
 }
 
 .figure {

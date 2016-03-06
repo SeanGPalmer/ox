@@ -4,4 +4,8 @@
 
 .carousel {
     position: relative;
+
+    &__slide {
+        height: 100%;
+    }
 }

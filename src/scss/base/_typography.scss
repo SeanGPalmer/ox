@@ -3,10 +3,10 @@
 // ==========================================================================
 
 // Import fonts (icomoon/Google fonts)
-@include fontface('icomoon', '../fonts/icomoon', 'icomoon');
+@include fontface("icomoon", $fontfolder, "icomoon");
 
-[data-icon]:before {
-	font-family: 'icomoon';
+[data-icon]::before {
+	font-family: "icomoon";
 	content: attr(data-icon);
 	speak: none;
 	font-style: normal;
@@ -62,14 +62,35 @@ b, strong {
 }
 
 blockquote {
-	margin: 0 1.5em;
-	padding: 2em 0 2em 1.5em;
-	color: $white;
+	float: left;
+	position: relative;
+	color: $primary;
+	margin: 0.5em 2em $base-padding 0;
+	padding: 2em;
+	max-width: 30em;
+
+	@include breakpoint(baby-bear) {
+		float: none;
+		max-width: 100%;
+		width: 100%;
+		margin: 0 0 $base-padding;
+	}
+
+	&.right {
+		float: right;
+		margin: 0.5em 0 $base-padding 2em;
+	}
+
+	&.fullwidth {
+		max-width: 100%;
+		width: 100%;
+		margin-bottom: 3em;
+	}
 
 	p {
+		@include rem(font-size, 2);
 		margin: 0;
-		font-size: 2em;
-		line-height: 1.167em;
+		line-height: 1.25;
 		font-style: italic;
 		font-weight: 300;
 	}
@@ -77,12 +98,6 @@ blockquote {
 	footer {
 		float: right;
 		padding-right: 20%;
-	}
-
-	cite {
-		font-size: 1em;
-		font-style: normal;
-		font-weight: 400;
 	}
 }
 

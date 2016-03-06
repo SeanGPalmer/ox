@@ -7,20 +7,7 @@ label {
     margin-bottom: 0.5em;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
+input,
 select,
 textarea,
 .field {
@@ -38,7 +25,7 @@ textarea,
     max-width: 400px;
     font-family: $font-body;
     background-color: $grey-tint;
-    @include transition(background-color 0.2s ease-in-out);
+    transition: background-color 0.2s;
 
     &:focus,
     &:active {
@@ -84,7 +71,7 @@ input[type="password"] {
     margin: 0 0 $base-padding;
 
     & + label {
-        @include inline-block;
+        display: inline-block;
         margin: 0 $base-padding 0 $half-padding;
         vertical-align: baseline;
     }
@@ -117,13 +104,11 @@ textarea {
 }
 
 select {
-    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20w…9-11.263s-1.956-8.325-4.89-11.263z%27%20fill%3D%27%23000%27/%3E%3C/svg%3E");
+    background-image: url("../images/arrow-down.svg");
     background-repeat: no-repeat;
     background-position: calc(100% - 1rem) center;
     background-size: 0.6875em;
     padding-right: 2.5rem;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     width: 100%;
     border-radius: $base-radius;

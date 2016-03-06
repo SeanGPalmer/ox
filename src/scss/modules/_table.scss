@@ -3,20 +3,20 @@
 // ==========================================================================
 
 table {
-	width: 100%;
-  	max-width: 100%;
-  	margin-bottom: $base-padding;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: $base-padding;
 
-	tr {
-		border: solid 1px $grey;
-	}
+    tr {
+        border: solid 1px $grey;
+    }
 
-	td {
-		padding: 0.5em 1em;
-	}
+    td {
+        padding: 0.5em 1em;
+    }
 
-	th {
-		text-align: left;
-		padding: 0.5em 1em;
-	}
+    th {
+        text-align: left;
+        padding: 0.5em 1em;
+    }
 }

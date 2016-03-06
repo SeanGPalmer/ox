@@ -8,7 +8,11 @@ $colours:
     "secondary" $secondary;
 
 @each $i in $colours {
-    .#{nth($i, 1)} {
+    .background--#{nth($i, 1)} {
         background-color: nth($i, 2);
+
+        + .background--#{nth($i, 1)} {
+            padding-top: 1em;
+        }
     }
 }

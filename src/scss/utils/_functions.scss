@@ -11,7 +11,7 @@
 // *****************************************************************
 
 @function parseInt($n) {
-	@return $n / ($n * 0 + 1);
+    @return $n / ($n * 0 + 1);
 }
 
 // *****************************************************************
@@ -23,8 +23,8 @@
 // *****************************************************************
 
 @function force-unit($value, $unit) {
-	$value: parseInt($value);
-	@return if($value == 0, 0, $value + $unit);
+    $value: parseInt($value);
+    @return if($value == 0, 0, $value + $unit);
 }
 
 // *****************************************************************
@@ -36,11 +36,11 @@
 // *****************************************************************
 
 @function map($func, $list, $args...) {
-	$new-list: ();
-	@each $item in $list {
-		$new-list: append($new-list, call($func, $item, $args...));
-	}
-	@return $new-list;
+    $new-list: ();
+    @each $item in $list {
+        $new-list: append($new-list, call($func, $item, $args...));
+    }
+    @return $new-list;
 }
 
 // *****************************************************************
@@ -52,11 +52,11 @@
 // *****************************************************************
 
 @function multiply($x, $y) {
-	@if type-of($x) == 'number' {
-		@return $x * $y;
-	} @else {
-		@return $x;
-	}
+    @if type-of($x) == "number" {
+        @return $x * $y;
+    } @else {
+        @return $x;
+    }
 }
 
 // *****************************************************************
@@ -67,7 +67,7 @@
 // *****************************************************************
 
 @function tint($color, $percent){
-	@return mix(white, $color, $percent);
+    @return mix(white, $color, $percent);
 }
 
 // *****************************************************************
@@ -78,7 +78,7 @@
 // *****************************************************************
 
 @function shade($color, $percent){
-	@return mix(black, $color, $percent);
+    @return mix(black, $color, $percent);
 }
 
 // *****************************************************************
@@ -91,29 +91,29 @@
 // *****************************************************************
 
 @function top-shadow($depth) {
-	$primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
-	$blur: nth(1.5 3 10 14 19, $depth) * 4px;
-	$color: rgba(black, nth(.12 .16 .19 .25 .30, $depth));
+    $primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
+    $blur: nth(1.5 3 10 14 19, $depth) * 4px;
+    $color: rgba(black, nth(0.12 0.16 0.19 0.25 0.3, $depth));
 
-	@return 0 $primary-offset $blur $color;
+    @return 0 $primary-offset $blur $color;
 }
 
 @function bottom-shadow($depth) {
-	$primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
-	$blur: nth(1 3 3 5 6, $depth) * 4px;
-	$color: rgba(black, nth(.24 .23 .23 .22 .22, $depth));
+    $primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
+    $blur: nth(1 3 3 5 6, $depth) * 4px;
+    $color: rgba(black, nth(0.24 0.23 0.23 0.22 0.22, $depth));
 
-	@return 0 $primary-offset $blur $color;
+    @return 0 $primary-offset $blur $color;
 }
 
 @mixin card($depth) {
-	@if $depth < 1 {
-		box-shadow: none;
-	} @else if $depth > 5 {
-		@warn "Invalid $depth `#{$depth}` for mixin `card`.";
-	} @else {
-		box-shadow: bottom-shadow($depth), top-shadow($depth);
-	}
+    @if $depth < 1 {
+        box-shadow: none;
+    } @else if $depth > 5 {
+        @warn "Invalid $depth `#{$depth}` for mixin `card`.";
+    } @else {
+        box-shadow: bottom-shadow($depth), top-shadow($depth);
+    }
 }
 
 // *****************************************************************
@@ -126,14 +126,9 @@
 // *****************************************************************
 
 @mixin underline($colour:$primary, $line-offset:1.2, $line-size:0.1) {
-	text-decoration: none;
-	@include background-image(linear-gradient(top, transparent 50%, $colour 50%));
-	background-repeat: repeat-x;
-	background-position: 0 #{$line-offset}em;
-	background-size: #{$line-size}em #{$line-size}em;
-
-	.lt-ie10 & { // because old IE can't handle it
-		background: none;
-		text-decoration: underline;
-	}
+    text-decoration: none;
+    @include background-image(linear-gradient(top, transparent 50%, $colour 50%));
+    background-repeat: repeat-x;
+    background-position: 0 #{$line-offset}em;
+    background-size: #{$line-size}em #{$line-size}em;
 }

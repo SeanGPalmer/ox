@@ -103,13 +103,15 @@
 @mixin clearfix {
 	*zoom: 1;
 
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		display: table;
 		content: "";
 	}
 
-	&:after { clear: both; }
+	&::after {
+		clear: both;
+	}
 }
 
 // *****************************************************************
@@ -131,7 +133,7 @@
 	text-shadow: none;
 	color: transparent;
 
-	:before {
+	&::before {
 	    content: "";
 	    display: block;
 	    width: 0;
@@ -220,11 +222,12 @@
 			weight: normal;
 			-webkit-font-smoothing: antialiased;
 		}
-		src: url($font-url + '/' + $font-name + '.eot');
-		src: url($font-url + '/' + $font-name + '.eot#iefix') format('embedded-opentype'),
-			 url($font-url + '/' + $font-name + '.woff') format('woff'),
-			 url($font-url + '/' + $font-name + '.ttf')  format('truetype'),
-			 url($font-url + '/' + $font-name + '.svg#' + $font-name) format('svg');
+		src: url($font-url + "/" + $font-name + ".eot");
+		src: url($font-url + "/" + $font-name + ".eot#iefix") format("embedded-opentype"),
+			 url($font-url + "/" + $font-name + ".woff") format("woff"),
+			 url($font-url + "/" + $font-name + ".woff2") format("woff2"),
+			 url($font-url + "/" + $font-name + ".ttf")  format("truetype"),
+			 url($font-url + "/" + $font-name + ".svg#" + $font-name) format("svg");
 	}
 }
 

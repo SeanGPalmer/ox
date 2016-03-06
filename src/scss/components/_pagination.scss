@@ -3,5 +3,35 @@
 // ==========================================================================
 
 .pagination {
+    width: 100%;
+    text-align: center;
 
+    a,
+    span {
+        @include rem(font-size, 1.5);
+        margin: 0 0.25em;
+
+        @include breakpoint(goldilocks) {
+            display: block;
+        }
+
+        &.disabled {
+            cursor: default;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__page {
+
+        &:hover {
+
+        }
+
+        &.current {
+
+        }
+    }
 }

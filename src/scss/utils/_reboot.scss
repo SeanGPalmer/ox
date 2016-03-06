@@ -5,8 +5,8 @@
 // Border-box everything
 * {
     &,
-    &:before,
-    &:after {
+    &::before,
+    &::after {
         box-sizing: border-box;
     }
 }
@@ -21,7 +21,7 @@
 
 // Reset HTML & body
 html {
-    font: #{($base-font-size/16px)*1em}/#{$line-height-ratio} $font-body;
+    font: 100%/#{$line-height-ratio} $font-body;
     -ms-overflow-style: scrollbar;
     color: $font-color;
     background: $background;
@@ -51,7 +51,12 @@ body {
 }
 
 // Remove top margins from headings
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-top: 0;
     margin-bottom: 0.5em;
 }

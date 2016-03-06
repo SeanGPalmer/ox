@@ -5,21 +5,13 @@
 .footer {
 	width: 100%;
 	padding: 3.5em 0;
-	background: $secondary;
-	color: $font-color;
+	background-color: $grey-shade;
+	color: $white;
 
 	h1, h2, h3, h4, h5, h6,
-	.h1, .h2, .h3, .h4, .h5, .h6 {
-		color: inherit;
-		margin: 0 0 $base-padding;
-	}
-
-	a {
-		color: inherit;
-		@include rem(font-size, 1);
-	}
-
+	.h1, .h2, .h3, .h4, .h5, .h6,
 	ul {
+		color: inherit;
 		margin: 0 0 $base-padding;
 	}
 
@@ -30,9 +22,11 @@
 		line-height: 1.5;
 	}
 
-	p {
+	a,
+	p,
+	span {
+		color: inherit;
 		@include rem(font-size, 1);
-		margin: 0 0 $half-padding;
 	}
 
 	img {

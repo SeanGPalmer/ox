@@ -11,16 +11,16 @@
     }
 }
 
-.fadeIn         { @include animation('fadeIn'); }
-.fadeInUp       { @include animation('fadeInUp'); }
-.fadeInDown     { @include animation('fadeInDown'); }
-.fadeInLeft     { @include animation('fadeInLeft'); }
-.fadeInRight    { @include animation('fadeInRight'); }
-.fadeOut        { @include animation('fadeIn'); }
-.fadeOutUp      { @include animation('fadeOutUp'); }
-.fadeOutDown    { @include animation('fadeOutDown'); }
-.fadeOutLeft    { @include animation('fadeOutLeft'); }
-.fadeOutRight   { @include animation('fadeOutRight'); }
+.fadeIn         { @include animation("fadeIn"); }
+.fadeInUp       { @include animation("fadeInUp"); }
+.fadeInDown     { @include animation("fadeInDown"); }
+.fadeInLeft     { @include animation("fadeInLeft"); }
+.fadeInRight    { @include animation("fadeInRight"); }
+.fadeOut        { @include animation("fadeIn"); }
+.fadeOutUp      { @include animation("fadeOutUp"); }
+.fadeOutDown    { @include animation("fadeOutDown"); }
+.fadeOutLeft    { @include animation("fadeOutLeft"); }
+.fadeOutRight   { @include animation("fadeOutRight"); }
 
 
 //Keyframes

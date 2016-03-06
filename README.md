@@ -1,46 +1,30 @@
 Ox
 ===========
 
-A responsive HTML5 Framework using SCSS, Gulp and Bower.
+A modular HTML, CSS and JS framework for developing responsive, grid-based projects.
 
-This framework requires the following applications to be installed.
+Designing websites from scratch is time-consuming and error-prone. By automating the underlying build helps to ensure best practices and provide a consistent baseline across projects.
 
-- Node JS  http://nodejs.org/download/
-- Ruby 1.9.3  https://ruby-lang.org/en/downloads/
-- Sass http://sass-lang.com/install
-- Compass  http://compass-style.org/install/
-- Bower http://bower.io/
-- Git http://git-scm.com/downloads
+## Installation
 
-## Getting Started
+Once you've got a standard Node setup configured you'll be ready to use Ox in next to no time, but for those arriving at this without a previous Node installation there's a few steps to take first.
 
-NOTE: Be sure to run command line as administrator.
+### Required
 
-You can clone this repo using git. Navigate to where you store your projects using the cd command line. For example: ```cd Projects```.
+* Install [npm](http://blog.npmjs.org/post/85484771375/how-to-install-npm).
+* Install [Gulp](http://gulpjs.com/): `npm install gulp -g`.
+* Install [Sass](http://sass-lang.com/) `gem install sass` (requires Ruby).
+* Download or clone this repo: `git clone https://github.com/majordigital/ox.git`.
 
-Ensure git is initialised in this folder: ```git init```.
+### Optional
 
-You should received the following message: ```Initialized empty Git repository in <folder name>/.git/```.
+* Install [Bower]((http://bower.io/)) `npm install bower -g` (used for managing front-end dependencies).
 
-Decide upon the name of your website folder; this will dictate the development URL you will use with browserSync. Using the following command, clone this repository into your projects folder replaceing 'projectx' with whatever you want your website folder to be named: ```git clone git://github.com/MajorDigital/ox.git projectx```.
+## Setup
 
-Navigate into the newly created folder: ```cd projectx```.
-
-## Gulp Setup
-
-In the ```gulpfile.js```, edit ```var project = 'projectname'``` to reflect the name of your website folder (this will be the same name used for your Virtual Host later), for example: ```var project = 'projectx'```
-
-Ensure Gulp is installed using ```gulp -v``` in command line. If it is not, then install it using ```npm install -g gulp```.
-
-Once Gulp is installed, install the dependencies within the package.json file using ```npm update```.
-
-## Bower Setup
-
-Ensure Bower is installed using ```bower -v``` in command line. If it is not, then install it using ```npm install -g bower```.
-
-Once Bower is installed, install the dependencies within the package.json file using ```bower update```.
-
-Once all of the dependencies are installed and gulpfile.js has been customised, run ```gulp bower``` to complete the bower tasks.
+* Edit `gulpfile.js` and edit the `projectname` variable to reflect the name of the website folder; this will be used for your Virtual Host setup.
+* Install the dependencies by running `npm install` within the project directory.
+* If using Bower, install the bower dependencies with 'bower `bower install` and then, once the dependencies have been installed, `gulp bower`.
 
 ## Virtual Host Setup
 
@@ -61,3 +45,7 @@ With WAMP active, you can now navigate to ```projectx.dev``` which will communic
 ```gulp build``` takes everything in the ```src``` folder and builds it according to the ```gulpfile.js```.
 
 ```gulp dist``` is the command to run when the project is ready to be deployed/distrubted.
+
+## Licence
+
+http://www.gnu.org/licenses/gpl.txt

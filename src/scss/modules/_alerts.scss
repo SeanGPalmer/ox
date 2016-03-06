@@ -20,25 +20,25 @@
 .alert {
     &--help {
         @extend %alert;
-        border-color: shade($alert-yellow, 5%);
-        background: $alert-yellow;
+        background: tint($alert-yellow, 75%);
+        border-color: $alert-yellow;
     }
 
     &--info {
         @extend %alert;
-        border-color: shade($alert-blue, 5%);
-        background: $alert-blue;
+        background: tint($alert-blue, 75%);
+        border-color: $alert-blue;
     }
 
     &--error  {
         @extend %alert;
-        border-color: shade($alert-red, 5%);
-        background: $alert-red;
+        background: tint($alert-red, 75%);
+        border-color: $alert-red;
     }
 
     &--success  {
         @extend %alert;
-        border-color: shade($alert-green, 5%);
-        background: $alert-green;
+        background: tint($alert-green, 75%);
+        border-color: $alert-green;
     }
 }

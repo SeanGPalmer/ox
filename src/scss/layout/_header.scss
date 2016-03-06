@@ -3,14 +3,13 @@
 // ==========================================================================
 
 .header {
-	z-index: 5678;
 	display: block;
 	position: relative;
 	margin: 0;
 
 	&__container {
 		width: 100%;
-		background: $background;
+		background-color: $background;
 
 		.row {
 			height: 100%;

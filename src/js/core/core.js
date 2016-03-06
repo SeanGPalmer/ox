@@ -1,6 +1,6 @@
 /*
  * Ox Scripts File
- * Author: David Howard
+ * Author: Davs Howard
  *
  * This file should contain any js scripts you want to add to the site and will be called automatically in the footer so as not to slow the page load.
  *
@@ -97,6 +97,34 @@ function fullscreen() {
 -----------------------------------*/
 function responsiveVideos() {
 	$('.main').fitVids();
+}
+
+
+/*---------------------------------
+	Accordion
+-----------------------------------*/
+function accordion() {
+	var $panes = $('.accordion > .accordion__item > .accordion__pane'),
+		$title = $('.accordion > .accordion__item > .accordion__title'),
+		speed = 200,
+		openClass = 'is-open';
+
+	$panes.hide();
+
+	$title.on('click touchstart', function() {
+		var $el = $(this),
+			$elItem = $el.parent(),
+			$elPane = $elItem.children('.accordion__pane');
+
+		if ($elItem.hasClass(openClass)) {
+			$panes.slideUp(speed);
+			$elItem.removeClass(openClass);
+		} else {
+			$elItem.addClass(openClass);
+			$panes.slideUp(speed);
+			$elPane.slideDown(speed);
+		}
+	});
 }
 
 
@@ -200,7 +228,7 @@ jQuery(document).ready(function($){
 
 	// ==== EXECUTE ==== //
 	smoothScroll();
-	//responsiveVideos();
+	responsiveVideos();
 	//animationInit();
 	//carouselInit();
 	//breakerParallax();

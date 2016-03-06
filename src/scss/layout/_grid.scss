@@ -99,6 +99,17 @@
         }
     }
 
+    // Grid spacer
+    .#{nth($column, 1)}-spacer {
+        @include breakpoint(nth($column, 2)) {
+            margin-bottom: $grid-gutter * 2;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
     // Grid visilibilty
     .#{nth($column, 1)}-hide {
         @include breakpoint(nth($column, 2)) {

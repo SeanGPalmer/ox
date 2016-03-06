@@ -1,4 +1,4 @@
-/* Ox is a responsive HTML5 Framework using SCSS, Gulp and Bower. */
+/* Ox - A modular HTML, CSS and JS framework for developing responsive, grid-based projects. */
 
 /* COMPANY */
 
@@ -14,6 +14,6 @@ Twitter: @djhsecondnature
 
 /* SITE */
 
-Framework: Ox Framework
+Framework: Ox
 Standards: HTML5, CSS3, SCSS
 Components: Modernizr, jQuery, Fitvids, Normalize.css

@@ -3,61 +3,60 @@
 // ==========================================================================
 
 %btn {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-  	display: inline-block;
-  	position: relative;
-  	font-family: $font-header;
-  	@include rem(font-size, 1);
-	font-weight: 500;
-	line-height: 1.5;
-	text-align: center;
-	margin: 0;
-	padding: 0.5em 1em;
-	vertical-align: middle;
-	white-space: nowrap;
-	border: 0;
-	cursor: pointer;
-	border-radius: $base-radius;
-	transition: background-color 0.2s ease-in-out;
+    appearance: none;
+    display: inline-block;
+    position: relative;
+    font-family: $font-header;
+    @include rem(font-size, 1);
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0;
+    padding: 0.5em 1em;
+    vertical-align: middle;
+    white-space: nowrap;
+    border: 0;
+    cursor: pointer;
+    border-radius: $base-radius;
+    transition: background-color 0.2s ease-in-out;
 
-	@include breakpoint(goldilocks) {
-		width: 100%;
-	}
+    @include breakpoint(goldilocks) {
+        width: 100%;
+    }
 
-	&,
-	&:hover,
-	&:focus {
-		text-decoration: none;
-		color: $white;
-	    outline: none;
-	}
+    &,
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: $white;
+        outline: none;
+    }
 
-	&:active {
-		top: 1px;
-	}
+    &:active {
+        top: 1px;
+    }
 
-	&.is-disabled,
-	&[disabled] {
-		cursor: not-allowed;
-		opacity: 0.65;
-	}
+    &.is-disabled,
+    &[disabled] {
+        cursor: not-allowed;
+        opacity: 0.65;
+    }
 
-	&.right {
-		float: right;
-	}
+    &.right {
+        float: right;
+    }
 }
 
 .button {
-	@extend %btn;
-	background-color: $primary;
+    @extend %btn;
+    background-color: $primary;
 
-	&:hover,
-	&:focus {
-		background-color: $primary-shade;
-	}
+    &:hover,
+    &:focus {
+        background-color: $primary-shade;
+    }
 
-	&:active {
-		background-color: $primary-shade;
-	}
+    &:active {
+        background-color: $primary-shade;
+    }
 }

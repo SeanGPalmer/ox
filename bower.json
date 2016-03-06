@@ -1,9 +1,15 @@
 {
   "name": "ox",
-  "version": "0.1.0",
+  "homepage": "http://ox.majordigital.com",
   "authors": [
-    "Davs Howard <david@majordigital.com>"
+    {
+      "name": "Davs Howard",
+      "company": "Major Digital",
+      "email": "davs@majordigital.com",
+      "homepage": "http://majordigital.com"
+    }
   ],
+  "license": "GPL-3.0",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -16,8 +22,6 @@
   ],
   "dependencies": {
     "jquery": "~1.11.1",
-    "modernizr": "~2.8.3",
-    "normalize.css": "~3.0.1",
-    "fitvids": "~1.1.0"
+    "modernizr": "~2.8.3"
   }
 }

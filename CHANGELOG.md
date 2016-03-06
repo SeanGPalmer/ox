@@ -1,5 +1,22 @@
 # Ox Changelog
 
+### 0.2.0 (5 March, 2016)
+
+_BOWER_
+* Stripped down to just jQuery and Modernizr
+
+_NPM_
+* Reworked gulp to modular approach
+* Added scss linting
+* Added core bundling
+* Updated dependencies
+
+_SCSS_
+* Removed requirement for Compass
+* Ensured partials adhered to linting
+* Updated variety of styles
+* Added variable for font/image location
+
 ### 0.1.3 (9 February, 2016)
 
 _BOWER_

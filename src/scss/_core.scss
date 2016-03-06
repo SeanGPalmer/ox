@@ -2,9 +2,6 @@
 //   Partials.
 // ==========================================================================
 
-// ==== COMPASS ==== //
-@import "compass";
-
 // ==== UTILS ==== //
 @import "utils/variables";
 @import "utils/external";
@@ -24,6 +21,7 @@
 @import "layout/grid";
 @import "layout/header";
 @import "layout/footer";
+@import "layout/deck";
 @import "layout/sections";
 @import "layout/sidebar";
 
