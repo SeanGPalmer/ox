@@ -16,7 +16,7 @@ gulp.task('styles-libsass', function() {
   return gulp.src(config.build.src)
   .pipe(plugins.postcss(linter, {syntax: syntax_scss}))
   .pipe(plugins.sourcemaps.init())
-  .pipe(plugins.sass(config.libsass))
+  .pipe(plugins.sass(config.libsass).on('error', plugins.sass.logError))
   .pipe(plugins.postcss(processors))
   .pipe(plugins.cssnano(config.minify))
   .pipe(plugins.sourcemaps.write('./'))

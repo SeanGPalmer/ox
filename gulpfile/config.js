@@ -93,9 +93,6 @@ module.exports = {
   , libsass: { // Requires the libsass implementation of Sass
       includePaths: ['./src/scss', bower, modules]
     , precision: 6
-    , onError: function(err) {
-        return console.log(err);
-      }
     }
   },
 

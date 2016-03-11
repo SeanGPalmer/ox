@@ -1,5 +1,14 @@
 # Ox Changelog
 
+### 0.2.2 (11 March, 2016)
+
+_NPM_
+* Fixed sass error logging
+* Updated to latest version of stylelint
+
+_SCSS_
+* Bug fixing
+
 ### 0.2.1 (11 March, 2016)
 
 _NPM_

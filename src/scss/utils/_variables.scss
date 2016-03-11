@@ -30,13 +30,13 @@ $xs-row-width:      100%;
 // Breakpoints sizes
 $xlarge:            null;
 $large:             1600px;
-$medium:            1200px;
+$medium:            1120px;
 $small:             767px;
 $xsmall:            374px;
 
 // Breakpoints names
 $breakpoints: (
-    "papa-bear": $xlarge,
+    "papa-bear": $large,
     "mama-bear": $medium,
     "baby-bear": $small,
     "goldilocks": $xsmall
@@ -44,8 +44,8 @@ $breakpoints: (
 
 // Breakpoints column names
 $column-names: (
-    "xl"    "papa-bear"     $grid-cols,
-    "l"     null            $grid-cols,
+    "xl"    null     		$grid-cols,
+    "l"     "papa-bear"     $grid-cols,
     "m"     "mama-bear"     $grid-cols,
     "s"     "baby-bear"     $grid-cols,
     "xs"    "goldilocks"    $grid-cols
