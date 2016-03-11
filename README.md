@@ -1,7 +1,7 @@
 Ox
 ===========
 
-A modular HTML, CSS and JS framework for developing responsive, grid-based projects.
+A modular HTML, SCSS and JS framework for developing responsive, grid-based projects.
 
 Designing websites from scratch is time-consuming and error-prone. By automating the underlying build helps to ensure best practices and provide a consistent baseline across projects.
 
@@ -23,8 +23,8 @@ Once you've got a standard Node setup configured you'll be ready to use Ox in ne
 ## Setup
 
 * Edit `gulpfile.js` and edit the `projectname` variable to reflect the name of the website folder; this will be used for your Virtual Host setup.
-* Install the dependencies by running `npm install` within the project directory.
-* If using Bower, install the bower dependencies with 'bower `bower install` and then, once the dependencies have been installed, `gulp bower`.
+* Install the dependencies by running `npm update` within the project directory.
+* If using Bower, install the bower dependencies with 'bower `bower update` and then, once the dependencies have been installed, `gulp bower`.
 
 ## Virtual Host Setup
 
@@ -36,7 +36,7 @@ Firstly, find the file located at: ```C:\Windows\System32\drivers\etc\hosts``` a
 
 Next, navigate to: ```C:\wamp\bin\apache\apache2.4.9\conf\extra\httpd-vhosts.conf``` and add: ```<VirtualHost *:80> DocumentRoot "<Project folder goes here>\projectx" ServerName projectx.dev </VirtualHost>```. You can seperate out each of these bits onto a new line.
 
-With WAMP active, you can now navigate to ```projectx.dev``` which will communicate with BrowserSync.
+With WAMP active, you can now navigate to ```projectx.dev```.
 
 ## Gulp Commands
 

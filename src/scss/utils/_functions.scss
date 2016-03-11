@@ -60,28 +60,6 @@
 }
 
 // *****************************************************************
-// Tint
-//
-// Mixes in white with a color
-//
-// *****************************************************************
-
-@function tint($color, $percent){
-    @return mix(white, $color, $percent);
-}
-
-// *****************************************************************
-// Shade
-//
-// Mixes in shade with a color
-//
-// *****************************************************************
-
-@function shade($color, $percent){
-    @return mix(black, $color, $percent);
-}
-
-// *****************************************************************
 // Card shadow
 //
 // Computes a top-shadow and bottom-shadow for a card effect.

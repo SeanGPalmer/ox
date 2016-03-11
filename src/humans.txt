@@ -1,4 +1,4 @@
-/* Ox - A modular HTML, CSS and JS framework for developing responsive, grid-based projects. */
+/* Ox - A modular HTML, SCSS and JS framework for developing responsive, grid-based projects. */
 
 /* COMPANY */
 

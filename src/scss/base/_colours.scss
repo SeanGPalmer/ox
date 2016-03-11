@@ -3,13 +3,18 @@
 // ==========================================================================
 
 $colours:
-    "primary" $primary,
-    "accent" $accent,
-    "secondary" $secondary;
+    "primary" $primary $white,
+    "accent" $accent $white,
+    "secondary" $secondary $white;
 
 @each $i in $colours {
     .background--#{nth($i, 1)} {
         background-color: nth($i, 2);
+        color: nth($i, 3);
+
+        * {
+            color: inherit;
+        }
 
         + .background--#{nth($i, 1)} {
             padding-top: 1em;

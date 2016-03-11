@@ -3,7 +3,7 @@
 // ==========================================================================
 
 // File locations
-$imagefolder:		"";
+$imagefolder:		"../images/";
 $fontfolder:		"../fonts/icomoon";
 
 // Base measurements
@@ -64,17 +64,17 @@ $accent:            #8e3329 !default;
 $secondary:         #ff5722 !default;
 
 $foreground:        #191919 !default;
-$background:        #e9e9e9 !default;
+$background:        #ffffff !default;
 
 // Tints and Shades
-$shade:             20%;
-$tint:              20%;
-$primary-shade: 	shade($primary, $shade);
-$primary-tint: 	    tint($primary, $tint);
-$accent-shade:      shade($accent, $shade);
-$accent-tint:       tint($accent, $tint);
-$secondary-shade:   shade($secondary, $shade);
-$secondary-tint:    tint($secondary, $tint);
+$shade:             40%;
+$tint:              40%;
+$primary-shade: 	mix(black, $primary, $shade);
+$primary-tint: 	    mix(white, $primary, $tint);
+$accent-shade:      mix(black, $accent, $shade);
+$accent-tint:       mix(white, $accent, $tint);
+$secondary-shade:   mix(black, $secondary, $shade);
+$secondary-tint:    mix(white, $secondary, $tint);
 
 // Alerts
 $alert-yellow:      #ebe16f;

@@ -1,5 +1,13 @@
 # Ox Changelog
 
+### 0.2.3 (11 March, 2016)
+
+_GENERAL_
+* Updated CSS references to SCSS
+
+_SCSS_
+* Further bug fixing
+
 ### 0.2.2 (11 March, 2016)
 
 _NPM_
