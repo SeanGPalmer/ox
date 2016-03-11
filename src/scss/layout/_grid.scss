@@ -3,12 +3,24 @@
 // ==========================================================================
 
 .row {
-	width: $row-width;
+	width: $xl-row-width;
 	margin: 0 auto;
 	padding: 0 $grid-gutter/2;
 
+    @include breakpoint(papa-bear) {
+        width: $l-row-width;
+    }
+
     @include breakpoint(mama-bear) {
-        width: 100%;
+        width: $m-row-width;
+    }
+
+    @include breakpoint(bbaby-bear) {
+        width: $s-row-width;
+    }
+
+    @include breakpoint(goldilocks) {
+        width: $xs-row-width;
     }
 
 	&::after {

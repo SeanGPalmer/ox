@@ -70,7 +70,7 @@ module.exports = {
   styles: {
     build: {
       src: src+'scss/**/*.scss'
-    , dest: build
+    , dest: build+'/styles'
     }
   , autoprefixer: { browsers: ['> 3%', 'last 2 versions', 'ie 11', 'ios 6', 'android 4'] }
   , stylelint: {"rules": {
@@ -114,11 +114,11 @@ module.exports = {
     }
   , favicon: {
       src: src+'images/favicon/*(*.ico|*.jpg|*.json)'
-    , dest: build
+    , dest: build+'images'
     }
   , font: {
       src: src+'fonts/**/*(*.eot|*.svg|*.ttf|*.woff|*.woff2)'
-    , dest: build
+    , dest: build+'fonts'
     }
   },
 

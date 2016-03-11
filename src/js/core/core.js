@@ -42,15 +42,15 @@ function breakpointCheck() {
 	var $r = $(".responsiveChecker");
 
 	if ($r.css("font-weight") === "500" ) {
-		return 4;
+		return 5;
     } else if ($r.css("font-weight") === "400" ) {
-		return 3;
+		return 4;
     } else if ($r.css("font-weight") === "300" ) {
-		return 2;
+		return 3;
     } else if ($r.css("font-weight") === "200" ) {
-		return 1;
+		return 2;
     } else if ($r.css("font-weight") === "100" ) {
-		return 0;
+		return 1;
     }
 }
 
@@ -176,9 +176,10 @@ function carouselInit() {
 	Initilising menu and hamburger icon
 -----------------------------------*/
 function mobileMenuClick() {
-	$('.nav__hamburger').on('click touchstart', function(event) {
+	$('.hamburger').on('click touchstart', function(event) {
 		event.preventDefault();
 
+		$(this).toggleClass('is-active');
 		$('body').toggleClass('open-nav');
 	});
 }

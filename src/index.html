@@ -7,19 +7,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Title -->
-        <title>Ox Framework</title>
+        <title>Ox - A modular HTML, CSS and JS framework for developing responsive, grid-based projects.</title>
 
         <!-- Core Meta Data -->
         <meta name="author" content="_majordigital">
-        <meta name="description" content="A responsive HTML5 Framework using SCSS, Gulp and Bower.">
-        <meta name="keywords" content="ox, framework, html5, css3, scss, gulp, bower, responsive" />
+        <meta name="description" content="A modular HTML, CSS and JS framework for developing responsive, grid-based projects.">
+        <meta name="keywords" content="ox, framework, html5, css3, scss, gulp, modular, js, grid, responsive" />
         <link rel="canonical" href="http://ox.majordigital.com">
 
         <!-- Open Graph Meta Data -->
-        <meta property="og:description" content="A responsive HTML5 Framework using SCSS, Gulp and Bower.">
+        <meta property="og:description" content="A modular HTML, CSS and JS framework for developing responsive, grid-based projects.">
         <meta property="og:image" content="images/defaults/opengraph.jpg">
-        <meta property="og:site_name" content="Ox Framework">
-        <meta property="og:title" content="Ox Framework">
+        <meta property="og:site_name" content="Ox">
+        <meta property="og:title" content="Ox">
         <meta property="og:type" content="website">
         <meta property="og:url" content="http://ox.majordigital.com">
 
@@ -27,8 +27,8 @@
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@_majordigital">
         <meta name="twitter:creator" content="@_majordigital">
-        <meta name="twitter:title" content="Ox Framework">
-        <meta name="twitter:description" content="A responsive HTML5 Framework using SCSS, Gulp and Bower.">
+        <meta name="twitter:title" content="Ox">
+        <meta name="twitter:description" content="A modular HTML, CSS and JS framework for developing responsive, grid-based projects.">
         <meta name="twitter:image" content="images/defaults/twittercard.jpg">
 
         <!-- Favicons -->
@@ -60,11 +60,11 @@
         <link rel="stylesheet" href="styles/style.css">
 
         <!-- Javascript -->
-        <script src="js/modernizr.min.js"></script>
+        <script src="js/modernizr.js"></script>
     </head>
 
     <body>
-        <!--[if lte IE 9]>
+        <!--[if lte IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
@@ -83,11 +83,11 @@
                             <h1>Ox</h1>
                         </a>
                     </div>
-                    <a class="nav__hamburger">
-                        <b class="top"></b>
-                        <b class="middle"></b>
-                        <b class="bottom"></b>
-                    </a>
+                    <button class="hamburger" type="button" aria-label="Menu" aria-controls="navigation">
+                        <span class="hamburger__box">
+                            <span class="hamburger__inner"></span>
+                        </span>
+                    </button>
                 </div>
             </div>
             <div class="nav__bar">
@@ -111,9 +111,9 @@
 
         <!-- Javascript -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
-        <script src="js/vendor.min.js"></script>
-        <script src="js/core.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
+        <script src="js/vendor.js"></script>
+        <script src="js/core.js"></script>
 
         <!-- Google Analytics -->
         <script>

@@ -21,14 +21,18 @@ $grid-cols:         12 !default;
 $grid-gutter:       1.25em !default;
 
 // Row width
-$row-width:         1240px;
+$xl-row-width:      1260px;
+$l-row-width:       1080px;
+$m-row-width:       768px;
+$s-row-width:       100%;
+$xs-row-width:      100%;
 
 // Breakpoints sizes
-$xlarge:            1650px;
-$large:             null; // Requires no breakpoint
-$medium:            $row-width;
+$xlarge:            null;
+$large:             1600px;
+$medium:            1200px;
 $small:             767px;
-$xsmall:            414px;
+$xsmall:            374px;
 
 // Breakpoints names
 $breakpoints: (

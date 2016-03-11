@@ -14,23 +14,23 @@ gulp.task('theme-php', function() {
 
 // Copy HTML source files to the `build` folder
 gulp.task('theme-html', function() {
-  return gulp.src(config.php.src)
-  .pipe(plugins.changed(config.php.dest))
-  .pipe(gulp.dest(config.php.dest));
+  return gulp.src(config.html.src)
+  .pipe(plugins.changed(config.html.dest))
+  .pipe(gulp.dest(config.html.dest));
 });
 
 // Copy favicon source files to the `build` folder
 gulp.task('theme-favicon', function() {
-  return gulp.src(config.php.src)
-  .pipe(plugins.changed(config.php.dest))
-  .pipe(gulp.dest(config.php.dest));
+  return gulp.src(config.favicon.src)
+  .pipe(plugins.changed(config.favicon.dest))
+  .pipe(gulp.dest(config.favicon.dest));
 });
 
 // Copy font source files to the `build` folder
 gulp.task('theme-font', function() {
-  return gulp.src(config.php.src)
-  .pipe(plugins.changed(config.php.dest))
-  .pipe(gulp.dest(config.php.dest));
+  return gulp.src(config.font.src)
+  .pipe(plugins.changed(config.font.dest))
+  .pipe(gulp.dest(config.font.dest));
 });
 
 // Copy everything under `src/languages` indiscriminately

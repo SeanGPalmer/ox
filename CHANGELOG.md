@@ -1,5 +1,22 @@
 # Ox Changelog
 
+### 0.2.1 (11 March, 2016)
+
+_NPM_
+* Fixed styles destination folders
+* Fixed theme tasks
+
+_HTML_
+* Update index.html
+
+_SCSS_
+* Completely rework hamburger partial
+* Reset select style
+* Changed responsive grid system
+
+_JQUERY_
+* Adjusted responsiveChecker
+
 ### 0.2.0 (5 March, 2016)
 
 _BOWER_
@@ -16,6 +33,7 @@ _SCSS_
 * Ensured partials adhered to linting
 * Updated variety of styles
 * Added variable for font/image location
+
 
 ### 0.1.3 (9 February, 2016)
 
@@ -38,12 +56,12 @@ _SCSS_
 * Added forms to label
 * Added figure to images
 * Reorganised helpers
-*
 
 _JQUERY_
 * Added hamburger click function
 * Added mobile detach function
 * Disable functions by default
+
 
 ### 0.1.2 (27 December, 2015)
 

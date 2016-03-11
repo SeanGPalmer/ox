@@ -104,12 +104,6 @@ textarea {
 }
 
 select {
-    background-image: url("../images/arrow-down.svg");
-    background-repeat: no-repeat;
-    background-position: calc(100% - 1rem) center;
-    background-size: 0.6875em;
-    padding-right: 2.5rem;
-    appearance: none;
     width: 100%;
     border-radius: $base-radius;
 }

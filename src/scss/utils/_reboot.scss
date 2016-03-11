@@ -21,7 +21,7 @@
 
 // Reset HTML & body
 html {
-    font: 100%/#{$line-height-ratio} $font-body;
+    font-size: 100%;
     -ms-overflow-style: scrollbar;
     color: $font-color;
     background: $background;
@@ -155,13 +155,8 @@ textarea {
   touch-action: manipulation;
 }
 
-
-
-// Work around a Firefox/IE bug where the transparent `button` background results in a loss of the default `button` focus styles.
-// @credit - https://github.com/suitcss/base/
 button:focus {
-    outline: 1px dotted;
-    outline: $base-radius auto -webkit-focus-ring-color;
+    outline: none
 }
 
 input,

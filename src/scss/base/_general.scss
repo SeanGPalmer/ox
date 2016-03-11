@@ -4,10 +4,10 @@
 
 // For syncing jQuery and CSS media queries
 .responsiveChecker {
-    font-weight: 400;
+    font-weight: 500;
 
     @include breakpoint(papa-bear) {
-        font-weight: 500;
+        font-weight: 400;
     }
 
     @include breakpoint(mama-bear) {
