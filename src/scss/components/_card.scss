@@ -2,25 +2,6 @@
 //   Cards.
 // ==========================================================================
 
-.deck {
-    width: calc(100% + #{$grid-gutter*2});
-    display: flex;
-    flex-flow: row wrap;
-    flex-basis: auto;
-    margin-right: -#{$grid-gutter/2};
-    margin-left: -#{$grid-gutter/2};
-
-    > .col {
-        display: flex;
-    }
-
-    @include breakpoint(mama-bear) {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
-
 .card {
     width: 100%;
     flex: 1 0 100%;

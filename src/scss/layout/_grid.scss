@@ -63,9 +63,18 @@
     }
 
     // Grid offset
-    $k: 0;
+
+    // Fix for SASS divide by zero resulting in 'Infinity'
+    .offset-#{nth($column, 1)}0 {
+        @include breakpoint(nth($column, 2)) {
+            margin-left: 0;
+        }
+    }
+
+    $k: 1;
     @while $k <= ($grid-cols - 1) {
         $percentage: unquote((100 / ($grid-cols / $k)) + "%");
+
         .offset-#{nth($column, 1)}#{$k} {
             @include breakpoint(nth($column, 2)) {
                 margin-left: $percentage;

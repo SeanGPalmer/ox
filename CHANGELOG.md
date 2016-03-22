@@ -1,5 +1,16 @@
 # Ox Changelog
 
+### 0.2.4 (22 March, 2016)
+
+_NPM_
+* Fixed theme task to include fonts and favicons
+
+_SCSS_
+* Removed duplicate deck
+* Fixed 'Infinity' issue with grid offset
+* Adjust button white-space
+* Updated normalize to v4
+
 ### 0.2.3 (11 March, 2016)
 
 _GENERAL_
