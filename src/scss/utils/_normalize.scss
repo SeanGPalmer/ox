@@ -33,7 +33,7 @@ main, // 2
 menu,
 nav,
 section,
-summary // 2 {
+summary { // 2
     display: block;
 }
 
@@ -89,6 +89,7 @@ abbr[title] {
 b,
 strong {
     font-weight: inherit;
+}
 
 // Add the correct font weight in Chrome, Edge, and Safari.
 b,
@@ -192,7 +193,7 @@ optgroup {
 // 2. Show the overflow in Edge, Firefox, and IE.
 button,
 input, // 1
-select // 2 {
+select { // 2
     overflow: visible;
 }
 

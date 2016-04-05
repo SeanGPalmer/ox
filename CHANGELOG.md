@@ -1,5 +1,10 @@
 # Ox Changelog
 
+### 0.2.5 (05 April, 2016)
+
+_SCSS_
+* Fixed critical issue with normalize
+
 ### 0.2.4 (22 March, 2016)
 
 _NPM_
