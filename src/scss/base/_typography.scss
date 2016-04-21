@@ -3,7 +3,7 @@
 // ==========================================================================
 
 // Import fonts (icomoon/Google fonts)
-@include fontface("icomoon", $fontfolder, "icomoon");
+@include fontface("icomoon", $fontfolder+"icomoon", "icomoon");
 
 [data-icon]::before {
 	font-family: "icomoon";
@@ -54,6 +54,10 @@ p, ul, ol {
 
 	&:last-child {
 		margin-bottom: 0;
+	}
+
+	&:empty {
+		display: none;
 	}
 }
 

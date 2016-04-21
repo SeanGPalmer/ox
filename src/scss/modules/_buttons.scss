@@ -47,7 +47,8 @@
     }
 }
 
-.button {
+.button,
+a.button {
     @extend %btn;
     background-color: $primary;
 

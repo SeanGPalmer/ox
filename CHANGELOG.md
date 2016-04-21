@@ -1,5 +1,15 @@
 # Ox Changelog
 
+### 0.2.6 (21 April, 2016)
+
+_HTML_
+* Amended meta info
+* Added FOUC example
+
+_SCSS_
+* Amended font folder location
+* Added link-button fallback
+
 ### 0.2.5 (05 April, 2016)
 
 _SCSS_
