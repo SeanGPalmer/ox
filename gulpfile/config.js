@@ -43,7 +43,7 @@ module.exports = {
     }
   },
 
-  scripts: {
+ scripts: {
     bundles: {                              // Bundles are defined by a name and an array of chunks (below) to concatenate.
       core: ['core']
     , vendor: ['vendor']
@@ -53,12 +53,12 @@ module.exports = {
   , chunks: {                               // Chunks are arrays of paths or globs matching a set of source files
       core: src+'js/core/*.js'
     , vendor: src+'js/vendor/*.js'
+    , modernizr: src+'js/modernizr/*.js'
     , jquery: bower+'jquery/dist/jquery.js'
-    , modernizr: bower+'modernizr/modernizr.js'
     }
   , dest: build+'js/'
   , lint: {
-      src: [src+'js/**/*.js', '!'+src+'js/vendor/*.js']
+      src: [src+'js/**/*.js', '!'+src+'js/vendor/*.js', '!'+src+'js/modernizr/*.js']
     }
   , minify: {
       src: build+'js/**/*.js'

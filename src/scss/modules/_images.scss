@@ -42,9 +42,11 @@ img {
     img {
         margin-bottom: $base-padding;
         line-height: 1;
+        width: 100% !important;
+        height: auto !important;
     }
 
-    caption {
+    figcaption {
         @include rem(font-size, 0.875);
     }
 }

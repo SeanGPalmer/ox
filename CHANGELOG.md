@@ -1,5 +1,21 @@
 # Ox Changelog
 
+### 0.2.7 (23 May, 2016)
+
+_GULP_
+* Moved modernizr from bower into gulp
+
+_JS_
+* Added ustom build of modernizr
+
+_HTML_
+* Fixed schema markup error
+
+_SCSS_
+* Added matte colours into _colours.scss
+* Changed default heading styles
+* Amended <figure> styles
+
 ### 0.2.6 (21 April, 2016)
 
 _HTML_

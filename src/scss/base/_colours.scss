@@ -12,9 +12,21 @@ $colours:
         background-color: nth($i, 2);
         color: nth($i, 3);
 
-        * {
-            color: inherit;
+        + .background--#{nth($i, 1)} {
+            padding-top: 1em;
         }
+    }
+}
+
+$mattecolours:
+    "white" $white $font-color,
+    "greytint" $grey-tint $font-color,
+    "dark" $dark $white;
+
+@each $i in $mattecolours {
+    .background--#{nth($i, 1)} {
+        background-color: nth($i, 2);
+        color: nth($i, 3);
 
         + .background--#{nth($i, 1)} {
             padding-top: 1em;
