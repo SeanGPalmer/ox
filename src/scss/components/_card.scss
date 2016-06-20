@@ -27,9 +27,9 @@
     .ie & {
         flex-basis: auto;
     }
+}
 
-    &__link {
-        @include coverer-link;
-        @include hide-text;
-    }
+.card__link {
+    @include coverer-link;
+    @include hide-text;
 }

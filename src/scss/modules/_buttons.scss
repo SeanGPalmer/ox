@@ -61,3 +61,18 @@ a.button {
         background-color: $primary-shade;
     }
 }
+
+.button--secondary,
+a.button--secondary {
+    @extend %btn;
+    background-color: $secondary;
+
+    &:hover,
+    &:focus {
+        background-color: $secondary-shade;
+    }
+
+    &:active {
+        background-color: $secondary-shade;
+    }
+}

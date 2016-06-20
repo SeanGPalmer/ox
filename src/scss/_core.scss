@@ -2,20 +2,27 @@
 //   Partials.
 // ==========================================================================
 
+// ==== VARIABLES ==== //
+@import "variables/base";
+@import "variables/colours";
+@import "variables/grid";
+@import "variables/typography";
+@import "variables/external";
+
+
 // ==== UTILS ==== //
-@import "utils/variables";
-@import "utils/external";
 @import "utils/functions";
 @import "utils/mixins";
-@import "utils/normalize";
-@import "utils/reboot";
-@import "utils/helpers";
+
 
 // ==== BASE ==== //
-@import "base/general";
-@import "base/colours";
-//@import "base/animation";
+@import "base/foundation";
+@import "base/base";
+@import "base/helpers";
+@import "base/animation";
 @import "base/typography";
+@import "base/colours";
+
 
 // ==== LAYOUT ==== //
 @import "layout/grid";
@@ -23,19 +30,21 @@
 @import "layout/footer";
 @import "layout/deck";
 @import "layout/sections";
-@import "layout/sidebar";
+@import "layout/aside";
+
 
 // ==== MODULES ==== //
 @import "modules/alerts";
 @import "modules/buttons";
 @import "modules/images";
 @import "modules/forms";
-@import "modules/table";
+@import "modules/tables";
+
 
 // ==== COMPONENTS ==== //
 @import "components/accordion";
 @import "components/breadcrumb";
-@import "components/breakers";
+@import "components/breaker";
 @import "components/card";
 @import "components/carousel";
 @import "components/content";
@@ -47,16 +56,20 @@
 @import "components/pagination";
 @import "components/social";
 @import "components/tabs";
-@import "components/tiles";
+@import "components/tile";
+
 
 // ==== PAGES ==== //
 @import "pages/404";
 
-// ==== VENDOR ==== //
+
+// ==== VENDORS ==== //
+@import "vendors/googlemaps";
 
 
 // ==== SHAME ==== //
 @import "base/shame";
+
 
 // ==== PRINT ==== //
 @import "base/print";

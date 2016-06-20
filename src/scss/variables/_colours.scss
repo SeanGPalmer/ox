@@ -1,0 +1,41 @@
+// ==========================================================================
+//   Colour variables.
+// ==========================================================================
+
+// Monochrome
+$black:             #000000;
+$white:             #ffffff;
+$grey:              #999999;
+
+// Brand
+$purple:            #9C27B0;
+$orange:            #FF5722;
+
+// Style
+$primary:           $purple;
+$secondary:         $orange;
+$dark:              $grey;
+
+// Background
+$foreground:        #191919;
+$background:        #ffffff;
+
+// Tints and Shades
+$shade:             40%;
+$tint:              40%;
+$grey-shade:        #4c4c4c;
+$grey-tint:         #f0f0f0;
+$primary-shade:     shade($primary, $shade);
+$primary-tint:      tint($primary, $tint);
+$secondary-shade:   shade($secondary, $shade);
+$secondary-tint:    tint($secondary, $tint);
+
+// Alert
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+// Font
+$selection-color:   $primary-tint;
+$font-color:        #333;

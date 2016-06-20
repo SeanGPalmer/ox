@@ -95,18 +95,28 @@
 }
 
 // *****************************************************************
-// Smarter underline
+// Slightly lighten a colour
 //
-// Computes a top-shadow and bottom-shadow for a card effect.
-// @param {Number} $depth - depth level (between 1 and 5)
+// Computes a lighter colour.
+// @param {Colour to tint, percentage of tint}
+// @param {Number} $percentage - percentage of `$color` in returned color
+// @return {Color}
 //
-// @link http://www.sumnoise.com/2014/03/30/underlining-links/
+// @link https://css-tricks.com/snippets/sass/tint-shade-functions/
 // *****************************************************************
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
 
-@mixin underline($colour:$primary, $line-offset:1.2, $line-size:0.1) {
-    text-decoration: none;
-    @include background-image(linear-gradient(top, transparent 50%, $colour 50%));
-    background-repeat: repeat-x;
-    background-position: 0 #{$line-offset}em;
-    background-size: #{$line-size}em #{$line-size}em;
+// *****************************************************************
+// Slightly darken a colour
+//
+// @access public
+// @param {Color} $color - color to shade
+// @param {Number} $percentage - percentage of `$color` in returned color
+//
+// @link https://css-tricks.com/snippets/sass/tint-shade-functions/
+// *****************************************************************
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
 }

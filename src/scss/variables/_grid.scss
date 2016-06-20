@@ -1,0 +1,37 @@
+// ==========================================================================
+//   Grid variables.
+// ==========================================================================
+
+$grid-cols:         12 !default;
+$grid-gutter:       1.25em !default;
+
+// Row width
+$xl-row-width:      1260px;
+$l-row-width:       1080px;
+$m-row-width:       768px;
+$s-row-width:       100%;
+$xs-row-width:      100%;
+
+// Breakpoints sizes
+$xlarge:            null;
+$large:             1600px;
+$medium:            1120px;
+$small:             767px;
+$xsmall:            374px;
+
+// Breakpoints names
+$breakpoints: (
+    "papa-bear": $large,
+    "mama-bear": $medium,
+    "baby-bear": $small,
+    "goldilocks": $xsmall
+);
+
+// Breakpoints column names
+$column-names: (
+    "xl"    null            $grid-cols,
+    "l"     "papa-bear"     $grid-cols,
+    "m"     "mama-bear"     $grid-cols,
+    "s"     "baby-bear"     $grid-cols,
+    "xs"    "goldilocks"    $grid-cols
+);

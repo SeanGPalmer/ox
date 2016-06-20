@@ -3,25 +3,25 @@
 // ==========================================================================
 
 img {
-    max-width: 100%;
-    height: auto;
-    -ms-interpolation-mode: bicubic;
-    display: inline-block;
-    vertical-align: middle;
-
     &.aligncenter {
         clear: both;
         margin-bottom: $base-padding;
     }
 
-    &.alignleft, &.alignright {
+    &.alignleft,
+    &.alignright {
         @include breakpoint(mama-bear) {
             max-width: 100%;
         }
     }
 
-    &.alignleft { margin-right: 1.5em; }
-    &.alignright { margin-left: 1.5em; }
+    &.alignleft {
+        margin-right: 1.5em;
+    }
+
+    &.alignright {
+        margin-left: 1.5em;
+    }
 
     &.dropshadow {
         &::after {

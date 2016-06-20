@@ -1,0 +1,17 @@
+// ==========================================================================
+//   Base variables.
+// ==========================================================================
+
+// File locations
+$imagefolder:       "../images/";
+$fontfolder:        "../fonts/";
+
+// Base measurements
+$base-font-size:    16px !default;
+$base-line-height:  28px !default;
+$base-radius:       5px;
+
+// Calculated measurements
+$line-height-ratio: ($base-line-height / $base-font-size) !default;
+$base-padding:      $line-height-ratio + em !default;
+$half-padding:      ($line-height-ratio / 2) + em !default;

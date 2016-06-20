@@ -1,5 +1,6 @@
 /*
  * Ox Scripts File
+ * v 0.1.0
  * Author: Davs Howard
  *
  * This file should contain any js scripts you want to add to the site and will be called automatically in the footer so as not to slow the page load.
@@ -101,79 +102,7 @@ function responsiveVideos() {
 
 
 /*---------------------------------
-	Accordion
------------------------------------*/
-function accordion() {
-	var $panes = $('.accordion > .accordion__item > .accordion__pane'),
-		$title = $('.accordion > .accordion__item > .accordion__title'),
-		speed = 200,
-		openClass = 'is-open';
-
-	$panes.hide();
-
-	$title.on('click touchstart', function() {
-		var $el = $(this),
-			$elItem = $el.parent(),
-			$elPane = $elItem.children('.accordion__pane');
-
-		if ($elItem.hasClass(openClass)) {
-			$panes.slideUp(speed);
-			$elItem.removeClass(openClass);
-		} else {
-			$elItem.addClass(openClass);
-			$panes.slideUp(speed);
-			$elPane.slideDown(speed);
-		}
-	});
-}
-
-
-/*---------------------------------
-	Animations - Requires waypoints.js
------------------------------------*/
-function animationInit() {
-	//Disable on mobile to help GPU
-	if (!mobilecheck()) {
-		$('.animated').waypoint(function() {
-			$(this).toggleClass($(this).data('animated'));
-		}, {
-			offset: 'bottom-in-view',
-			triggerOnce: true
-		});
-	} else {
-		$('.animated').removeClass('hideme');
-	}
-
-	// Disable animations on IE9
-	if($("html").hasClass("lt-ie9")) {
-		$(".hideme").removeClass("hideme");
-	}
-}
-
-/*---------------------------------
-	Carousel
-	Requires owlcarousel.js
-
-	Visit http://www.owlcarousel.owlgraphic.com/docs/started-welcome.html for more documentation.
------------------------------------*/
-function carouselInit() {
-	$(".owlcarousel").owlCarousel({
-		autoplay: true,
-		items: 1,
-		loop:true,
-		nav: true,
-		navText: [
-			"<span class='prev' data-icon='&#xe601;'></span>",
-			"<span class='next' data-icon='&#xe602;'></span>"
-		],
-		dots: false
-	});
-}
-
-/*---------------------------------
 	Navigation - primary
-
-	Initilising menu and hamburger icon
 -----------------------------------*/
 function mobileMenuClick() {
 	$('.hamburger').on('click touchstart', function(event) {
@@ -184,55 +113,13 @@ function mobileMenuClick() {
 	});
 }
 
-function mobileMenuDetach() {
-	var navprimary = $('.nav__primary').detach();
 
-	if (breakpointCheck() < 2) {
-		navprimary.appendTo('.nav__mobile');
-	} else {
-		navprimary.appendTo('.nav__bar .row');
-	}
-}
-
-/*---------------------------------
-	Breaker Parallax
-
-	Creates parallax effect on defined element but scroll speed determined by height of the background image within.
------------------------------------*/
-function breakerParallax() {
-	var el 		= $('.breaker'),
-		elImg 	= el.find(el+'__image');
-
-	// If there are any found elements
-	if (el[0]) {
-		var viewportScrollTop 	= $(window).scrollTop(),
-		    viewportHeight 		= $(window).height(),
-		    viewportAdjust 		= parseInt(viewportHeight) + parseInt(viewportScrollTop),
-		    elTop 				= el.offset().top.toFixed(0),
-		    elHeight			= el.outerHeight(),
-		    elBottom			= parseInt(elTop) + parseInt(elHeight);
-
-		// Checks to see if element is one the page (both scrolling into and out of view)
-		if (viewportAdjust >= elTop && viewportScrollTop < elBottom) {
-			var elImgHeight		= elImg.height(),
-				elHeightDiff	= elImgHeight - elHeight,
-				offsetDiff		= parseInt(viewportHeight) + parseInt(elHeight),
-				scrollDiff  	= viewportAdjust - elTop;
-
-			var imagetranslateY = ((elHeightDiff/offsetDiff)*scrollDiff).toFixed(2);
-			elImg.css('transform', 'translate3d(0, -'+imagetranslateY+'px, 0)');
-		}
-	}
-}
 
 jQuery(document).ready(function($){
 
 	// ==== EXECUTE ==== //
 	smoothScroll();
 	responsiveVideos();
-	//animationInit();
-	//carouselInit();
-	//breakerParallax();
 	mobileMenuClick();
 
 	// ==== SCROLL EVENTS ==== //
@@ -241,15 +128,10 @@ jQuery(document).ready(function($){
 	});
 
 	// ==== RESIZE EVENTS ==== //
-	$(window).on("resize", function() {
+	$(window).on("resize orientationchange", function() {
 		debouncer(function() {
 
 		}, 500);
-	});
-
-	// ==== ORIENTATION CHANGE EVENTS ==== //
-	$(window).on("orientationchange", function() {
-
 	});
 
 	// ==== LOAD EVENTS ==== //

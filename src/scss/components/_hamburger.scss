@@ -26,47 +26,6 @@ $hamburger-speed: 120ms;
 		opacity: 0.7;
 	}
 
-	&__box {
-		width: $hamburger-bar-width;
-		height: $hamburger-bar-height * 3 + $hamburger-bar-spacing * 2;
-		display: block;
-		position: relative;
-	}
-
-	&__inner {
-		display: block;
-		top: 50%;
-		margin-top: $hamburger-bar-height / -2;
-		transition: transform $hamburger-speed ease;
-
-		&,
-		&::before,
-		&::after {
-			position: absolute;
-			width: $hamburger-bar-width;
-			height: $hamburger-bar-height;
-			background-color: $hamburger-color;
-			border-radius: $hamburger-border-radius;
-			transition: transform $hamburger-speed cubic-bezier(0.55, 0.055, 0.675, 0.19);
-		}
-
-		&::before,
-		&::after {
-			content: "";
-			display: block;
-		}
-
-		&::before {
-			top: ($hamburger-bar-spacing + $hamburger-bar-height) * -1;
-			transition: top $hamburger-speed$hamburger-speed 0.14s ease, opacity $hamburger-speed$hamburger-speed ease;
-		}
-
-		&::after {
-			bottom: ($hamburger-bar-spacing + $hamburger-bar-height) * -1;
-			transition: bottom $hamburger-speed$hamburger-speed 0.14s ease, transform $hamburger-speed$hamburger-speed cubic-bezier(0.55, 0.055, 0.675, 0.19);
-		}
-	}
-
 	&.is-active {
 		.hamburger__inner {
 			transform: rotate(45deg);
@@ -85,5 +44,46 @@ $hamburger-speed: 120ms;
 				transition: bottom $hamburger-speed ease, transform $hamburger-speed 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
 			}
 		}
+	}
+}
+
+.hamburger__box {
+	width: $hamburger-bar-width;
+	height: $hamburger-bar-height * 3 + $hamburger-bar-spacing * 2;
+	display: block;
+	position: relative;
+}
+
+.hamburger__inner {
+	display: block;
+	top: 50%;
+	margin-top: $hamburger-bar-height / -2;
+	transition: transform $hamburger-speed ease;
+
+	&,
+	&::before,
+	&::after {
+		position: absolute;
+		width: $hamburger-bar-width;
+		height: $hamburger-bar-height;
+		background-color: $hamburger-color;
+		border-radius: $hamburger-border-radius;
+		transition: transform $hamburger-speed cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+	}
+
+	&::before {
+		top: ($hamburger-bar-spacing + $hamburger-bar-height) * -1;
+		transition: top $hamburger-speed$hamburger-speed 0.14s ease, opacity $hamburger-speed$hamburger-speed ease;
+	}
+
+	&::after {
+		bottom: ($hamburger-bar-spacing + $hamburger-bar-height) * -1;
+		transition: bottom $hamburger-speed$hamburger-speed 0.14s ease, transform $hamburger-speed$hamburger-speed cubic-bezier(0.55, 0.055, 0.675, 0.19);
 	}
 }

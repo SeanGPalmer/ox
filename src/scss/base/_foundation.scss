@@ -1,0 +1,168 @@
+// ==========================================================================
+//   The Foundation.
+// ==========================================================================
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+}
+
+// Prevents margin and border from affecting element width.
+* {
+    &,
+    &::before,
+    &::after {
+        box-sizing: inherit;
+    }
+}
+
+body {
+    margin: 0;
+    font: 16px/1 sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+// Make viewport responsive
+// @link - https://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design
+@-ms-viewport {
+    width: device-width;
+}
+
+// Remove default spacing and border for appropriate elements.
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote,
+figure,
+ol,
+ul,
+dl,
+dd,
+pre {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+strong {
+    font-weight: bold;
+}
+
+button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    -webkit-font-smoothing: inherit;
+    letter-spacing: inherit;
+
+    // Fix for transparent `button` backgrounds in Firefox/IE.
+    &::focus {
+        outline: 1px dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+    }
+}
+
+// iOS "clickable elements" fix for role="button"
+// @link - https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+[role="button"] {
+    cursor: pointer;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button,
+input,
+select {
+    overflow: visible;
+    margin: 0;
+}
+
+textarea {
+    resize: vertical;
+    overflow: auto;
+}
+
+// Click delay optimization for touch
+// @link - http://v4-alpha.getbootstrap.com/content/reboot/#click-delay-optimization-for-touch
+a,
+area,
+button,
+[role="button"],
+input,
+label,
+select,
+summary,
+textarea {
+    touch-action: manipulation;
+}
+
+a,
+button {
+    color: inherit;
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+iframe {
+    border: 0;
+}
+
+// Suppress the focus outline on elements that cannot be accessed via keyboard.
+// This prevents an unwanted focus outline from appearing around elements that
+// might still respond to pointer events.
+//
+// Credit: https://github.com/suitcss/base
+[tabindex="-1"]:focus {
+    outline: none !important;
+}
+
+main,
+li {
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+// Hide the overflow in IE.
+svg:not(:root) {
+    overflow: hidden;
+}
+
+::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+:focus {
+    outline: 0;
+}

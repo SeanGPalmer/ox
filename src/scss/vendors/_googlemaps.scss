@@ -1,0 +1,14 @@
+// ==========================================================================
+//   Google Maps.
+// ==========================================================================
+
+// Styles Google Maps and MapQuest embeds properly
+#map_canvas,
+.map_canvas,
+.mqa-display {
+    img,
+    embed,
+    object {
+        max-width: none !important;
+    }
+}

@@ -4,7 +4,6 @@
 
 $colours:
     "primary" $primary $white,
-    "accent" $accent $white,
     "secondary" $secondary $white;
 
 @each $i in $colours {
