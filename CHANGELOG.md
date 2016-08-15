@@ -1,5 +1,29 @@
 # Ox Changelog
 
+### 0.2.9 (15 August, 2016)
+
+_NPM_
+* Amended installation instructions
+
+_HTML_
+* Streamlined `<head>` data
+
+### 0.2.8 (20 June, 2016)
+
+_JS_
+* Removed non-generic scripts
+* Updated modernizr
+
+_SCSS_
+* Removed unnecessary keyframe mixin (utilise autoprefixer instead)
+* Created modular variable partials
+* Removed reboot and normalize and created custom 'Foundation' reset
+* Trimmed helpers partial
+* Updated typography partial
+* Began conforming partials to new coding style guide
+* Renamed several partials
+* Re-added tint/shade mixins
+
 ### 0.2.7 (23 May, 2016)
 
 _GULP_

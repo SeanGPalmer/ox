@@ -22,7 +22,7 @@ Once you've got a standard Node setup configured you'll be ready to use Ox in ne
 
 ## Setup
 
-* Edit `gulpfile.js` and edit the `projectname` variable to reflect the name of the website folder; this will be used for your Virtual Host setup.
+* Edit `gulpfile/config.js` and edit the `projectname` variable to reflect the name of the website folder; this will be used for your Virtual Host setup.
 * Install the dependencies by running `npm update` within the project directory.
 * If using Bower, install the bower dependencies with 'bower `bower update` and then, once the dependencies have been installed, `gulp bower`.
 
