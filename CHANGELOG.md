@@ -1,5 +1,10 @@
 # Ox Changelog
 
+### 0.2.11 (23 August, 2016)
+
+_SCSS_
+* Added missing keyframe mixin
+
 ### 0.2.10 (23 August, 2016)
 
 _JS_
