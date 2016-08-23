@@ -113,11 +113,18 @@ function mobileMenuClick() {
 	});
 }
 
+/*---------------------------------
+	FOUC
+-----------------------------------*/
+function fouc() {
+	$('.no-fouc').removeClass('no-fouc');
+}
 
 
 jQuery(document).ready(function($){
 
 	// ==== EXECUTE ==== //
+	fouc();
 	smoothScroll();
 	responsiveVideos();
 	mobileMenuClick();
@@ -136,6 +143,5 @@ jQuery(document).ready(function($){
 
 	// ==== LOAD EVENTS ==== //
 	$(window).on("load", function() {
-
 	});
 });

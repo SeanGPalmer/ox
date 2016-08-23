@@ -18,7 +18,7 @@
 }
 
 .fadein {
-    animation-duration: 0.4s;
+    animation-duration: 0.2s;
     animation-name: fadeIn;
 }
 
@@ -40,16 +40,34 @@
     transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+@for $i from 1 through 30 {
+    $j: #{($i  * 100)};
+
+    .delayed--#{$j} {
+        animation-delay: #{$j}ms;
+    }
+}
+
+
 // ==========================================================================
 //   Keyframes.
 // ==========================================================================
 
-@keyframes (fadeIn) {
+@include keyframes(slideDown) {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@include keyframes(fadeIn) {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
 
-@keyframes (fadeInUp) {
+@include keyframes(fadeInUp) {
     0% {
         opacity: 0;
         transform: translateY(100%);
@@ -60,7 +78,7 @@
     }
 }
 
-@keyframes (fadeInDown) {
+@include keyframes(fadeInDown) {
     0% {
         opacity: 0;
         transform: translateY(-100%);
@@ -71,7 +89,7 @@
     }
 }
 
-@keyframes (fadeInLeft) {
+@include keyframes(fadeInLeft) {
     0% {
         opacity: 0;
         transform: translateX(-100%);
@@ -82,7 +100,7 @@
     }
 }
 
-@keyframes (fadeInRight) {
+@include keyframes(fadeInRight) {
     0% {
         opacity: 0;
         transform: translateX(100%);

@@ -1,5 +1,13 @@
 # Ox Changelog
 
+### 0.2.10 (23 August, 2016)
+
+_JS_
+* Added FOUC fix
+
+_SCSS_
+* Fixed animation keyframes
+
 ### 0.2.9 (15 August, 2016)
 
 _NPM_
