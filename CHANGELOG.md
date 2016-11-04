@@ -1,5 +1,11 @@
 # Ox Changelog
 
+### 0.2.12 (04 November, 2016)
+
+_SCSS_
+* Renamed modules folder to elements
+* Fixed erroneous class
+
 ### 0.2.11 (23 August, 2016)
 
 _SCSS_
