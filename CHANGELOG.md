@@ -1,5 +1,13 @@
 # Ox Changelog
 
+### 0.2.13 (11 January, 2017)
+
+_GULP_
+* Updated style minification to ignore autoprefixer
+
+_SCSS_
+* Fixed elements links in _core.scss
+
 ### 0.2.12 (04 November, 2016)
 
 _SCSS_

@@ -72,7 +72,7 @@ module.exports = {
       src: src+'scss/**/*.scss'
     , dest: build+'/styles'
     }
-  , autoprefixer: { browsers: ['> 3%', 'last 2 versions', 'ie 11', 'ios 6', 'android 4'] }
+  , autoprefixer: { browsers: ['> 3%', 'last 2 versions', 'ie 11', 'ios >= 6', 'android >= 4', 'safari >= 8'] }
   , stylelint: {"rules": {
       "color-no-invalid-hex": true,
       "number-leading-zero": "always",
@@ -89,7 +89,10 @@ module.exports = {
       "selector-pseudo-element-colon-notation": "double",
       "max-empty-lines": 5
     }}
-  , minify: { safe: true }
+  , minify: {
+      safe: true,
+      autoprefixer: false
+  }
   , libsass: { // Requires the libsass implementation of Sass
       includePaths: ['./src/scss', bower, modules]
     , precision: 6
