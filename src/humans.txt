@@ -3,7 +3,7 @@
 /* COMPANY */
 
 Major Digital
-http://majordigital.com
+https://majordigital.com
 Twitter: @_majordigital
 
 /* TEAM */

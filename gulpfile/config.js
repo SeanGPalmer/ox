@@ -7,8 +7,8 @@
 var project     = 'ox'                    // Directory name for your project; be sure to change this!
   , src         = './src/'                // The raw files for your project; this is where you'll do all your work; don't delete this folder!
   , build       = './build/'              // The temporary files of your development build of your project; feel free to delete this anytime as it can be rebuilt.
-  , dist        = './dist/'               // The production package that you'll upload to your server; feel free to delete this anytime as it can be rebuilt
-  , assets      = './assets/'             // A staging area for assets that require processing before landing in the source folder.
+  , dist        = './dist/'               // The production package that you'll upload to your server; feel free to delete this anytime as it can be rebuilt.
+  , assets      = 'assets/'             // The assets folder.
   , bower       = './bower_components/'   // Bower packages
   , modules     = './node_modules/'       // npm packages
 ;
@@ -51,26 +51,26 @@ module.exports = {
     , modernizr: ['modernizr']
     }
   , chunks: {                               // Chunks are arrays of paths or globs matching a set of source files
-      core: src+'js/core/*.js'
-    , vendor: src+'js/vendor/*.js'
-    , modernizr: src+'js/modernizr/*.js'
+      core: src+assets+'js/core/*.js'
+    , vendor: src+assets+'js/vendor/*.js'
+    , modernizr: src+assets+'js/modernizr/*.js'
     , jquery: bower+'jquery/dist/jquery.js'
     }
-  , dest: build+'js/'
+  , dest: build+assets+'js/'
   , lint: {
-      src: [src+'js/**/*.js', '!'+src+'js/vendor/*.js', '!'+src+'js/modernizr/*.js']
+      src: [src+assets+'js/**/*.js', '!'+src+assets+'js/vendor/*.js', '!'+src+assets+'js/modernizr/*.js']
     }
   , minify: {
-      src: build+'js/**/*.js'
+      src: build+assets+'js/**/*.js'
     , uglify: {} // Default options
-    , dest: build+'js/'
+    , dest: build+assets+'js/'
     }
   },
 
   styles: {
     build: {
-      src: src+'scss/**/*.scss'
-    , dest: build+'/styles'
+      src: src+assets+'scss/**/*.scss'
+    , dest: build+assets+'/styles'
     }
   , autoprefixer: { browsers: ['> 3%', 'last 2 versions', 'ie 11', 'ios >= 6', 'android >= 4', 'safari >= 8'] }
   , stylelint: {"rules": {
@@ -94,7 +94,7 @@ module.exports = {
       autoprefixer: false
   }
   , libsass: { // Requires the libsass implementation of Sass
-      includePaths: ['./src/scss', bower, modules]
+      includePaths: [src+assets+'scss', bower, modules]
     , precision: 6
     }
   },
@@ -113,12 +113,12 @@ module.exports = {
     , dest: build
     }
   , favicon: {
-      src: src+'images/favicon/*(*.ico|*.jpg|*.json)'
-    , dest: build+'images'
+      src: src+assets+'images/favicon/*(*.ico|*.jpg|*.json)'
+    , dest: build+assets+'images'
     }
   , font: {
-      src: src+'fonts/**/*(*.eot|*.svg|*.ttf|*.woff|*.woff2)'
-    , dest: build+'fonts'
+      src: src+assets+'fonts/**/*(*.eot|*.svg|*.ttf|*.woff|*.woff2)'
+    , dest: build+assets+'fonts'
     }
   },
 
@@ -133,10 +133,10 @@ module.exports = {
 
   watch: {
     src: {
-      styles:       src+'scss/**/*.scss'
-    , scripts:      src+'js/**/*.js'
+      styles:       src+assets+'scss/**/*.scss'
+    , scripts:      src+assets+'js/**/*.js'
     , images:       src+'**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)'
-    , theme:        [src+'**/*(*.php|*.html)', src+'images/favicon/*(*.ico|*.jpg|*.json)', src+'fonts/**/*(*.eot|*.svg|*.ttf|*.woff|*.woff2)']
+    , theme:        [src+'**/*(*.php|*.html)', src+assets+'images/favicon/*(*.ico|*.jpg|*.json)', src+assets+'fonts/**/*(*.eot|*.svg|*.ttf|*.woff|*.woff2)']
     }
   , watcher: 'browsersync'
   }

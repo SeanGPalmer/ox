@@ -1,8 +1,8 @@
 {
   "name": "ox",
-  "version": "0.2.3",
+  "version": "0.2.14",
   "description": "A modular HTML, SCSS and JS framework for developing responsive, grid-based projects.",
-  "homepage": "http://ox.majordigital.com",
+  "homepage": "https://ox.majordigital.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/majordigital/ox.git"
@@ -12,7 +12,7 @@
       "name": "Davs Howard",
       "company": "Major Digital",
       "email": "davs@majordigital.com",
-      "homepage": "http://majordigital.com"
+      "homepage": "https://majordigital.com"
     }
   ],
   "license": "GNU General Public Licence 3.0",

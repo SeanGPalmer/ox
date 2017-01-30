@@ -1,5 +1,11 @@
 # Ox Changelog
 
+### 0.2.14 (30 January, 2017)
+
+_GENERAL_
+* Restructured folders
+* Dependencies updates
+
 ### 0.2.13 (11 January, 2017)
 
 _GULP_

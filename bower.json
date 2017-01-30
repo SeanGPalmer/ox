@@ -1,12 +1,12 @@
 {
   "name": "ox",
-  "homepage": "http://ox.majordigital.com",
+  "homepage": "https://ox.majordigital.com",
   "authors": [
     {
       "name": "Davs Howard",
       "company": "Major Digital",
       "email": "davs@majordigital.com",
-      "homepage": "http://majordigital.com"
+      "homepage": "https://majordigital.com"
     }
   ],
   "license": "GPL-3.0",
@@ -21,7 +21,7 @@
     "package.json"
   ],
   "dependencies": {
-    "jquery": "~1.11.1",
+    "jquery": "~3.1.1",
     "modernizr": "~2.8.3"
   }
 }
